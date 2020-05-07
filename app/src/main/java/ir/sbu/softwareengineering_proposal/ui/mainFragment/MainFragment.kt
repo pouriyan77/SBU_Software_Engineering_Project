@@ -1,24 +1,24 @@
-package ir.sbu.softwareengineering_proposal.ui.MainFragment
+package ir.sbu.softwareengineering_proposal.ui.mainFragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import ir.sbu.softwareengineering_proposal.R
+import ir.sbu.softwareengineering_proposal.adapter.mainViewPager.MainViewPagerAdapter
+import kotlinx.android.synthetic.main.fragment_main.*
 
-/**
- * A simple [Fragment] subclass.
- */
-class MainFragment : Fragment() {
+class MainFragment : Fragment(R.layout.fragment_main) {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return TextView(activity).apply {
-            setText(R.string.hello_blank_fragment)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupViewPager()
+    }
+
+    private fun setupViewPager() {
+        viewPager?.let {
+            it.adapter = MainViewPagerAdapter(childFragmentManager)
+            tabLayout.setupWithViewPager(it)
+            it.currentItem = 1
         }
     }
 

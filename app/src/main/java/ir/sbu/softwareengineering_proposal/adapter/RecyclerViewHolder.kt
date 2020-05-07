@@ -1,4 +1,4 @@
-package com.pand_app.asyab.adapter
+package ir.sbu.softwareengineering_proposal.adapter
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

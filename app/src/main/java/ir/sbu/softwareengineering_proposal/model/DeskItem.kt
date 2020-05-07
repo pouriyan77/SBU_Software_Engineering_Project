@@ -1,3 +1,3 @@
 package ir.sbu.softwareengineering_proposal.model
 
-class DeskRecyclerAdapter:
+class DeskItem(val name: String, val imageRes: Int)

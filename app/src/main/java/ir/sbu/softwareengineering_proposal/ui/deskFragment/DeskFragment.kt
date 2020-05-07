@@ -1,4 +1,4 @@
-package ir.sbu.softwareengineering_proposal.ui
+package ir.sbu.softwareengineering_proposal.ui.deskFragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.adapter.RecyclerViewInteraction
 import ir.sbu.softwareengineering_proposal.adapter.deskRecycler.DeskRecyclerAdapter
@@ -23,7 +25,14 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
     ) {
         super.onViewCreated(view, savedInstanceState)
         setupDeskItems()
-        deskRecyclerView.adapter = DeskRecyclerAdapter(adminDeskItems, this)
+        setupRecyclerView()
+    }
+
+    private fun setupRecyclerView() {
+        deskRecyclerView?.apply {
+            adapter = DeskRecyclerAdapter(deskItems, this@DeskFragment)
+            layoutManager = GridLayoutManager(context, 2, LinearLayoutManager.VERTICAL, false)
+        }
     }
 
     private fun setupDeskItems() {
@@ -31,6 +40,6 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
     }
 
     override fun onItemClickedListener(position: Int) {
-        Toast.makeText(this, )
+        Toast.makeText(context, deskItems[position].name, Toast.LENGTH_LONG).show()
     }
 }
