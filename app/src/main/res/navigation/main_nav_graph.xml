@@ -9,5 +9,13 @@
         android:id="@+id/mainFragment"
         android:name="ir.sbu.softwareengineering_proposal.ui.mainFragment.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="ir.sbu.softwareengineering_proposal.ui.registerFragment.RegisterFragment"
+        android:label="RegisterFragment" />
 </navigation>

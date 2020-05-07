@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.adapter.RecyclerViewInteraction
 import ir.sbu.softwareengineering_proposal.adapter.deskRecycler.DeskRecyclerAdapter
 import ir.sbu.softwareengineering_proposal.model.DeskItem
+import ir.sbu.softwareengineering_proposal.utils.addUserStr
 import ir.sbu.softwareengineering_proposal.utils.adminDeskItems
 import kotlinx.android.synthetic.main.fragment_desk.*
 
@@ -40,6 +42,12 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
     }
 
     override fun onItemClickedListener(position: Int) {
-        Toast.makeText(context, deskItems[position].name, Toast.LENGTH_LONG).show()
+        val name = deskItems[position].name
+
+        when(name)
+        {
+            addUserStr -> findNavController().navigate(R.id.action_mainFragment_to_registerFragment)
+            else -> Toast.makeText(context, name, Toast.LENGTH_LONG).show()
+        }
     }
 }
