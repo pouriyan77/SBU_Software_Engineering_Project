@@ -17,5 +17,10 @@
         <item name="fontFamily">@font/iran_sans_1</item>
 <!--        <item name="android:textColor">@android:color/white</item>-->
     </style>
+    
+<!--    <style name="textInputEditText">-->
+<!--        <item name="android:textColor">#ffff</item>-->
+<!--        <item name="android:textSize">@dimen/normal_font_size</item>-->
+<!--    </style>-->
 
 </resources>
