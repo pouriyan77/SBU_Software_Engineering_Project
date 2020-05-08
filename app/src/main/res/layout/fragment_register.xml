@@ -41,8 +41,6 @@
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
-            app:counterEnabled="true"
-            app:counterMaxLength="20"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
             app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +55,6 @@
                 android:gravity="center"
                 android:hint="نام"
                 android:inputType="text"
-                android:maxLength="20"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -69,8 +66,6 @@
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
-            app:counterEnabled="true"
-            app:counterMaxLength="20"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
             app:layout_constraintEnd_toEndOf="parent"
@@ -85,31 +80,9 @@
                 android:gravity="center"
                 android:hint="نام خانوادگی"
                 android:inputType="text"
-                android:maxLength="20"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
-
-        <!--<EditText
-            android:id="@+id/register_last_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/forms_with_margin"
-            android:layout_marginTop="@dimen/forms_with_margin"
-            android:layout_marginRight="@dimen/forms_with_margin"
-            android:hint="نام خانوادگی"
-            android:maxLines="1" />-->
-
-
-        <!--<EditText
-            android:id="@+id/register_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/forms_with_margin"
-            android:layout_marginTop="@dimen/forms_with_margin"
-            android:layout_marginRight="@dimen/forms_with_margin"
-            android:hint="ایمیل"
-            android:maxLines="1" />-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout_register3"
@@ -118,7 +91,6 @@
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
-            app:counterEnabled="true"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
             app:layout_constraintEnd_toEndOf="parent"
@@ -145,10 +117,8 @@
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
-            app:counterEnabled="true"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
-            app:counterMaxLength="20"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
@@ -161,7 +131,6 @@
                 android:gravity="center"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPassword"
-                android:maxLength="20"
                 android:hint="رمز عبور"
                 android:maxLines="1" />
 
@@ -174,12 +143,10 @@
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
-            app:counterEnabled="true"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:counterMaxLength="20"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -191,40 +158,10 @@
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPassword"
                 android:hint="تکرار رمز عبور"
-                android:maxLength="20"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--<EditText
-            android:id="@+id/register_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/forms_with_margin"
-            android:layout_marginTop="@dimen/forms_with_margin"
-            android:layout_marginRight="@dimen/forms_with_margin"
-            android:hint="رمز عبور"
-            android:maxLines="1" />-->
-
-        <!--<EditText
-            android:id="@+id/register_repeat_password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/forms_with_margin"
-            android:layout_marginTop="@dimen/forms_with_margin"
-            android:layout_marginRight="@dimen/forms_with_margin"
-            android:hint="رمز عبور"
-            android:maxLines="1" />-->
-
-        <!--<EditText
-            android:id="@+id/register_national_number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/forms_with_margin"
-            android:layout_marginTop="@dimen/forms_with_margin"
-            android:layout_marginRight="@dimen/forms_with_margin"
-            android:hint="کد ملی"
-            android:maxLines="1" />-->
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout_register6"
@@ -304,7 +241,7 @@
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/forms_with_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
-            android:background="@color/colorPrimaryDark"
+            android:background="@drawable/login_botton_selector"
             android:fontFamily="@font/iran_sans_1"
             android:text="ثبت اطلاعات"
             android:layout_marginBottom="@dimen/activity_vertical_margin"

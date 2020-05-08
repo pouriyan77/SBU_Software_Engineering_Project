@@ -12,3 +12,10 @@ val adminDeskItems = listOf<DeskItem>(
     DeskItem(addUserStr, R.mipmap.add_user_icon),
     DeskItem(editUserStr, R.mipmap.edit_user_icon)
 )
+
+//studentDeskItem will be added
+//profDeskItem will be added
+//png 128 px xhdpi
+//تعیین استاد راهنما
+//داوری پروپوزال
+//آپلود پروپوزال برای دانشجو
