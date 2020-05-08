@@ -9,4 +9,5 @@
     <dimen name="title_font_size">20sp</dimen>
     <dimen name="normal_font_size">14sp</dimen>
     <dimen name="forms_with_margin">40dp</dimen>
+    <dimen name="settings_item_icon_size">40dp</dimen>
 </resources>

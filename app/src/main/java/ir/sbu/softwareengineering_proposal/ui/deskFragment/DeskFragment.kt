@@ -15,6 +15,7 @@ import ir.sbu.softwareengineering_proposal.adapter.deskRecycler.DeskRecyclerAdap
 import ir.sbu.softwareengineering_proposal.model.DeskItem
 import ir.sbu.softwareengineering_proposal.utils.addUserStr
 import ir.sbu.softwareengineering_proposal.utils.adminDeskItems
+import ir.sbu.softwareengineering_proposal.utils.editUserStr
 import kotlinx.android.synthetic.main.fragment_desk.*
 
 class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
