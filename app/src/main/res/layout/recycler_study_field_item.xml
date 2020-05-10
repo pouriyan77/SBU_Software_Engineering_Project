@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="30dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="5dp"
+    android:backgroundTint="@color/background"
+    tools:layout_marginHorizontal="2dp">
+
+    <TextView
+        android:id="@+id/fieldOfStudyTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        tools:text="هوش مصنوعی و سیستم های خبره"
+        android:layout_gravity="center"
+        style="@style/cardDetailsTextsStyle"
+        android:layout_margin="3dp"/>
+
+</androidx.cardview.widget.CardView>

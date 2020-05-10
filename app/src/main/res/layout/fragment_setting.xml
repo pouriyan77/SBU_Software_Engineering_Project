@@ -23,8 +23,8 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:tint="@color/colorAccent"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
+                android:layout_width="@dimen/userImageSize"
+                android:layout_height="@dimen/userImageSize"
                 android:layout_marginTop="16dp"
                 android:src="@mipmap/account_icon"
                 app:layout_constraintEnd_toEndOf="parent"

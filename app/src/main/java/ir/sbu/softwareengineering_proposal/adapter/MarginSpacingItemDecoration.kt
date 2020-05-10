@@ -1,4 +1,4 @@
-package ir.sbu.softwareengineering_proposal.utils
+package ir.sbu.softwareengineering_proposal.adapter
 
 import androidx.recyclerview.widget.RecyclerView
 import android.graphics.Rect

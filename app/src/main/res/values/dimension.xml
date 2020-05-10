@@ -10,4 +10,6 @@
     <dimen name="normal_font_size">14sp</dimen>
     <dimen name="forms_with_margin">40dp</dimen>
     <dimen name="settings_item_icon_size">40dp</dimen>
+    <dimen name="userImageSize">60dp</dimen>
+    <dimen name="cardStandardCorner">8dp</dimen>
 </resources>

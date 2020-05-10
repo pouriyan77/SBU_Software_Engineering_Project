@@ -18,6 +18,12 @@
         <item name="android:textColor">@color/colorAccent</item>
 <!--        <item name="android:textColor">@android:color/white</item>-->
     </style>
+
+    <style name="cardDetailsTextsStyle">
+        <item name="fontFamily">@font/iran_sans_1</item>
+        <item name="android:textColor">@color/cardLightTextColor</item>
+        <item name="android:textSize">14sp</item>
+    </style>
     
 <!--    <style name="textInputEditText">-->
 <!--        <item name="android:textColor">#ffff</item>-->

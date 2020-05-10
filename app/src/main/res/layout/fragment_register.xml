@@ -257,7 +257,7 @@
         </RadioGroup>
 
         <Button
-            android:id="@+id/save_form_register"
+            android:id="@+id/registerBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"

@@ -21,5 +21,18 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="ir.sbu.softwareengineering_proposal.ui.registerFragment.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_professorListFragment"
+            app:destination="@id/professorListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/professorListFragment"
+        android:name="ir.sbu.softwareengineering_proposal.ui.professorListFragment.ProfessorListFragment"
+        android:label="fragment_professor_list"
+        tools:layout="@layout/fragment_professor_list" />
 </navigation>
