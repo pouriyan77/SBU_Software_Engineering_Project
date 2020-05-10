@@ -15,6 +15,7 @@
 
     <style name="tabTextStyle" parent="TextAppearance.AppCompat">
         <item name="fontFamily">@font/iran_sans_1</item>
+        <item name="android:textColor">@color/colorAccent</item>
 <!--        <item name="android:textColor">@android:color/white</item>-->
     </style>
     

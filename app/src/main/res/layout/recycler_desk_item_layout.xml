@@ -4,9 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    app:cardElevation="16dp"
+
     app:cardCornerRadius="5dp"
-    android:layout_margin="8dp"
+    android:backgroundTint="@color/card_background_dark"
     >
 
     <LinearLayout
@@ -21,13 +21,14 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:layout_margin="10dp"
-            tools:src="@mipmap/add_user_icon"/>
+            tools:src="@mipmap/add_user_icon"
+            android:tint="@color/colorAccent"/>
 
         <TextView
             android:id="@+id/deskItemTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:fontFamily="@font/iran_sans_1"
             tools:text="ثبت نام کاربر"/>
 

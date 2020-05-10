@@ -14,7 +14,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layoutDirection="ltr"/>
+        android:layoutDirection="ltr"
+        android:background="@color/background"
+        android:elevation="10dp"/>
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
@@ -24,6 +26,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tabLayout"
-        android:layoutDirection="ltr"/>
+        android:layoutDirection="ltr" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
