@@ -10,6 +10,7 @@
         android:id="@+id/professorsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/recycler_professor_item_layout"/>
+        tools:listitem="@layout/recycler_professor_item_layout"
+        android:paddingBottom="8dp" />
 
 </FrameLayout>

@@ -21,6 +21,7 @@ public class ProfessorItemViewHolder extends RecyclerViewHolder<Professor> {
     private TextView degreeTextView;
     private TextView educationalGroupTextView;
     private RecyclerView fieldOfStudyRecyclerView;
+    private FieldOfStudyRecyclerAdapter adapter;
 
     public ProfessorItemViewHolder(@NotNull View itemView, @Nullable RecyclerViewInteraction interaction) {
         super(itemView, interaction);
@@ -37,7 +38,10 @@ public class ProfessorItemViewHolder extends RecyclerViewHolder<Professor> {
         facultyTextView.setText(item.getFaculty());
         degreeTextView.setText(item.getDegree());
         educationalGroupTextView.setText(item.getGroup());
-        fieldOfStudyRecyclerView.setAdapter(new FieldOfStudyRecyclerAdapter(item.getFieldsOfStudy()));
+        if (adapter == null){
+            adapter = new FieldOfStudyRecyclerAdapter(item.getFieldsOfStudy());
+        }
+        fieldOfStudyRecyclerView.setAdapter(adapter);
         fieldOfStudyRecyclerView.addItemDecoration(new HorizontalSpacingItemDecoration(3));
     }
 }

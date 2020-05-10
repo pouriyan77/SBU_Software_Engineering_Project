@@ -41,4 +41,15 @@ public class ProfessorsRecyclerAdapter extends RecyclerView.Adapter<RecyclerView
     public int getItemCount() {
         return professorList.size();
     }
+
+    @Override
+    public void setHasStableIds(boolean hasStableIds) {
+        super.setHasStableIds(hasStableIds);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        return super.getItemViewType(position);
+    }
+
 }
