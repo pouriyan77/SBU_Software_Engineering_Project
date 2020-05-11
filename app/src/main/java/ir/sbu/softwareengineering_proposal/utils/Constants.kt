@@ -3,6 +3,7 @@ package ir.sbu.softwareengineering_proposal.utils
 import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.model.DeskItem
 import ir.sbu.softwareengineering_proposal.model.Professor
+import ir.sbu.softwareengineering_proposal.model.Proposal
 
 const val BASE_URL = "https://warm-tundra-16580.herokuapp.com/api/"
 
@@ -42,4 +43,23 @@ val fakeProfessors = listOf(
     Professor("دانشکده مهندسی و علوم کامپیوتر", "استادیار", "گروه آموزشی مهندسی نرم افزار",
         listOf("تست نرم افزار", "الگوریتم های پویا"), "", "علیرضا", "شاملی سندی",
         "", 1)
+)
+
+val fakeProposal = listOf(
+    Proposal("پیاده سازی سامانه دفاع پروپوزال دانشجویان کارشناسی ارشد", "گروه آموزشی مهندسی نرم افزار",
+        listOf("تست نرم افزار", "الگوریتم های پویا"), "", "کیمیا",
+        "آقایی", "", 1),
+
+    Proposal("پیاده سازی سامانه دفاع پروپوزال دانشجویان کارشناسی ارشد", "گروه آموزشی مهندسی نرم افزار",
+        listOf("تست نرم افزار", "الگوریتم های پویا"), "", "کیمیا",
+        "آقایی", "", 1),
+
+    Proposal("پیاده سازی سامانه دفاع پروپوزال دانشجویان کارشناسی ارشد", "گروه آموزشی مهندسی نرم افزار",
+        listOf("تست نرم افزار", "الگوریتم های پویا"), "", "کیمیا",
+        "آقایی", "", 1),
+
+    Proposal("پیاده سازی سامانه دفاع پروپوزال دانشجویان کارشناسی ارشد", "گروه آموزشی مهندسی نرم افزار",
+        listOf("تست نرم افزار", "الگوریتم های پویا"), "", "کیمیا",
+        "آقایی", "", 1)
+
 )
