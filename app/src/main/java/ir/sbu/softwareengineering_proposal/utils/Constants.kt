@@ -12,10 +12,15 @@ const val editUserStr = "ویرایش اطلاعات کاربران"
 const val uploadProposalStr = "آپلود پروپوزال"
 const val judgeProposalStr = "داوری پروپوزال"
 const val setSupervisorStr = "تعیین استاد راهنما"
+const val setJudge = "مشخص کردن داور"
+
+
+
 
 val adminDeskItems = listOf<DeskItem>(
     DeskItem(addUserStr, R.mipmap.add_user_icon),
-    DeskItem(editUserStr, R.mipmap.edit_user_icon)
+    DeskItem(editUserStr, R.mipmap.edit_user_icon),
+            DeskItem(setSupervisorStr, R.mipmap.set_supervisor_icon)
 )
 
 val studentDeskItems = listOf<DeskItem>(
@@ -24,7 +29,7 @@ val studentDeskItems = listOf<DeskItem>(
 
 val professorDeskItem = listOf<DeskItem>(
     DeskItem(judgeProposalStr, R.mipmap.judge_icon),
-    DeskItem(setSupervisorStr, R.mipmap.set_supervisor_icon)
+    DeskItem(setJudge, R.mipmap.judge_icon)
 )
 
 val fakeProfessors = listOf(
@@ -63,3 +68,5 @@ val fakeProposal = listOf(
         "آقایی", "", 1)
 
 )
+
+// تعیین استاد راهنما -> ایکون
