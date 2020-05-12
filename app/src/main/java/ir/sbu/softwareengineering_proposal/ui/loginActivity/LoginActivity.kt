@@ -28,7 +28,6 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
 
     private fun setupOnClicks() {
         loginBtn.button.setOnClickListener {
-            Log.i("dsfsd", "dsffds")
             showProgressBar(true)
             if (checkLoginFields()){
                 presenter.requestLogin(
