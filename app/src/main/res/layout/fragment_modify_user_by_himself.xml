@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/standard_margin">
+
+        <TextView
+            android:id="@+id/modifyUserByHimselfTextViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/forms_with_margin"
+            android:fontFamily="@font/iran_sans_bold_6"
+            android:text="ویرایش اطلاعات"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_font_size" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/modifyUserByHimselfPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/forms_with_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:textColorHint="@color/colorAccent"
+            app:counterOverflowTextAppearance="@style/usernameCounterStyle"
+            app:counterTextAppearance="@style/usernameCounterStyle"
+            app:hintTextColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="@font/iran_sans_1"
+                android:gravity="center"
+                android:hint="رمز عبور"
+                android:imeOptions="flagNoExtractUi"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:textColorHint="@color/colorAccent"
+                app:hintTextColor="@color/colorAccent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/modifyUserByHimselfEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/forms_with_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:textColorHint="@color/colorAccent"
+            app:counterOverflowTextAppearance="@style/usernameCounterStyle"
+            app:counterTextAppearance="@style/usernameCounterStyle"
+            app:hintTextColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/register_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
+                android:fontFamily="@font/iran_sans_1"
+                android:gravity="center"
+                android:hint="ایمیل"
+                android:inputType="textEmailAddress"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+
+            android:layout_weight="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/modifyUserByHimselfButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/forms_with_margin"
+                android:layout_marginTop="100dp"
+                android:layout_marginRight="@dimen/forms_with_margin"
+
+                android:layout_marginBottom="@dimen/activity_vertical_margin"
+                android:background="@drawable/login_button_selector"
+                android:fontFamily="@font/iran_sans_1"
+                android:text="ثبت تغییرات"
+                android:textColor="@android:color/white" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</ScrollView>
