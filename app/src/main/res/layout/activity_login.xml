@@ -59,11 +59,12 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:backgroundTint="@color/colorAccent"
                 android:id="@+id/nationalCodeEditText"
+                android:backgroundTint="@color/colorAccent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
+                android:textColor="@color/colorAccent"
                 android:gravity="center"
                 android:hint="کد ملی"
                 android:inputType="number"
@@ -92,6 +93,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
+                android:textColor="@color/colorAccent"
                 android:hint="کلمه عبور"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPassword"
@@ -99,17 +101,13 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+        <include layout="@layout/loading_button"
             android:id="@+id/loginBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="64dp"
             android:layout_marginEnd="8dp"
-            android:background="@drawable/login_button_selector"
-            android:fontFamily="@font/iran_sans_1"
-            android:text="ورود"
-            android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
