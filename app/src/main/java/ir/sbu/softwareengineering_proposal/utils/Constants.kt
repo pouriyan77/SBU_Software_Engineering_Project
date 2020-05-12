@@ -7,14 +7,17 @@ import ir.sbu.softwareengineering_proposal.model.Proposal
 
 const val BASE_URL = "https://warm-tundra-16580.herokuapp.com/api/"
 
+const val adminRoleId = 1
+const val studentRoleId = 2
+const val groupManagerRoleId = 3
+const val professorRoleId = 4
+
 const val addUserStr = "ثبت نام کاربر جدید"
 const val editUserStr = "ویرایش اطلاعات کاربران"
 const val uploadProposalStr = "آپلود پروپوزال"
 const val judgeProposalStr = "داوری پروپوزال"
 const val setSupervisorStr = "تعیین استاد راهنما"
-const val setJudge = "مشخص کردن داور"
-
-
+const val setJudgeStr = "مشخص کردن داور"
 
 
 val adminDeskItems = listOf<DeskItem>(
@@ -29,7 +32,7 @@ val studentDeskItems = listOf<DeskItem>(
 
 val professorDeskItem = listOf<DeskItem>(
     DeskItem(judgeProposalStr, R.mipmap.judge_icon),
-    DeskItem(setJudge, R.mipmap.judge_icon)
+    DeskItem(setJudgeStr, R.mipmap.judge_icon)
 )
 
 val fakeProfessors = listOf(

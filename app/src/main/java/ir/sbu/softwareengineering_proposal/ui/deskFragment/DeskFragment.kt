@@ -1,7 +1,9 @@
 package ir.sbu.softwareengineering_proposal.ui.deskFragment
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
@@ -12,12 +14,14 @@ import ir.sbu.softwareengineering_proposal.adapter.RecyclerViewInteraction
 import ir.sbu.softwareengineering_proposal.adapter.deskRecycler.DeskRecyclerAdapter
 import ir.sbu.softwareengineering_proposal.model.DeskItem
 import ir.sbu.softwareengineering_proposal.adapter.MarginSpacingItemDecoration
-import ir.sbu.softwareengineering_proposal.utils.addUserStr
-import ir.sbu.softwareengineering_proposal.utils.adminDeskItems
+import ir.sbu.softwareengineering_proposal.model.User
+import ir.sbu.softwareengineering_proposal.ui.mainActivity.MainActivity
+import ir.sbu.softwareengineering_proposal.utils.*
 import kotlinx.android.synthetic.main.fragment_desk.*
 
 class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
 
+    private lateinit var user: User
     private lateinit var deskItems: List<DeskItem>
 
     override fun onViewCreated(
@@ -25,6 +29,7 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
         savedInstanceState: Bundle?
     ) {
         super.onViewCreated(view, savedInstanceState)
+        user = (activity as MainActivity).sessionManager!!.user
         setupDeskItems()
         setupRecyclerView()
     }
@@ -39,10 +44,18 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
                 )
             )
         }
+
+
     }
 
     private fun setupDeskItems() {
-        deskItems = adminDeskItems
+        deskItems = when(user.roleId){
+            adminRoleId -> adminDeskItems
+            studentRoleId -> studentDeskItems
+            groupManagerRoleId -> professorDeskItem
+            professorRoleId -> professorDeskItem
+            else -> adminDeskItems
+        }
     }
 
     override fun onItemClickedListener(position: Int) {
