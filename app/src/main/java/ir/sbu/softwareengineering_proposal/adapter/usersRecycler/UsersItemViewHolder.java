@@ -25,7 +25,15 @@ public class UsersItemViewHolder extends RecyclerViewHolder<User> {
 
     public void bind(User item) {
         userNameTextView.setText(item.getFirstName().concat(" ").concat(item.getLastName()));
-        roleTextView.setText(item.getRoleId());
-        userStatusTextView.setText("!!!!");
+        if (item.getRoleId() == 1) {
+            roleTextView.setText("ادمین");
+        } else if (item.getRoleId() == 2) {
+            roleTextView.setText("دانشجو");
+        } else if (item.getRoleId() == 3) {
+            roleTextView.setText("مدیرگروه");
+        } else {
+            roleTextView.setText("استاد");
+        }
+        userStatusTextView.setText("تکمیل شده");
     }
 }
