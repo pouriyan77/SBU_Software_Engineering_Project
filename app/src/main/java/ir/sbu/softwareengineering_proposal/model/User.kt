@@ -6,10 +6,13 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 open class User(
-    @SerializedName("national_number") val nationalCode: String,
-    @SerializedName("first_name") val firstName: String,
-    @SerializedName("last_name") val lastName: String,
-    @SerializedName("email") val email: String,
-    @SerializedName("role_id") val roleId: Int) : Parcelable {
+    @SerializedName("id") open val id: Int,
+    @SerializedName("national_number") open val nationalCode: String,
+    @SerializedName("first_name") open val firstName: String,
+    @SerializedName("last_name") open val lastName: String,
+    @SerializedName("email") open val email: String,
+    @SerializedName("role_id") open val roleId: Int,
+    open val completeProfileStatus: Boolean
+) : Parcelable {
 
 }

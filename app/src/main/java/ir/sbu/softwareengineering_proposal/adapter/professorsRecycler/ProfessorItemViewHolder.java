@@ -35,9 +35,9 @@ public class ProfessorItemViewHolder extends RecyclerViewHolder<Professor> {
     @Override
     public void bind(Professor item) {
         professorNameTextView.setText(item.getFirstName().concat(" ").concat(item.getLastName()));
-        facultyTextView.setText(item.getFaculty());
+//        facultyTextView.setText(item.getFaculty());
         degreeTextView.setText(item.getDegree());
-        educationalGroupTextView.setText(item.getGroup());
+        educationalGroupTextView.setText(item.getMajor().getTitle());
         if (adapter == null){
             adapter = new FieldOfStudyRecyclerAdapter(item.getFieldsOfStudy());
         }

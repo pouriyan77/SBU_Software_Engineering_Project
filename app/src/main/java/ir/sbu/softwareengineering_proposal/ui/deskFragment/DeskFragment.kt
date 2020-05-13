@@ -64,6 +64,7 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
         when(name)
         {
             addUserStr -> findNavController().navigate(R.id.action_mainFragment_to_registerFragment)
+            editUserStr -> findNavController().navigate(R.id.action_mainFragment_to_chooseUsersToEditFragment)
             else -> Toast.makeText(context, name, Toast.LENGTH_LONG).show()
         }
     }

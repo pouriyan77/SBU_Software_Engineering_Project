@@ -21,6 +21,10 @@ public class UsersItemViewHolder extends RecyclerViewHolder<User> {
         userNameTextView = itemView.findViewById(R.id.userNameTextView);
         userStatusTextView = itemView.findViewById(R.id.userStatusTextView);
         roleTextView = itemView.findViewById(R.id.roleTextView);
+
+        itemView.setOnClickListener(v -> {
+            interaction.onItemClickedListener(getAdapterPosition());
+        });
     }
 
     public void bind(User item) {
@@ -34,6 +38,16 @@ public class UsersItemViewHolder extends RecyclerViewHolder<User> {
         } else {
             roleTextView.setText("استاد");
         }
-        userStatusTextView.setText("تکمیل شده");
+        if (item.getCompleteProfileStatus()){
+            userStatusTextView.setText("تکمیل شده");
+            userStatusTextView.setTextColor(
+                    itemView.getContext()
+                            .getResources().getColor(R.color.successColor));
+        }else {
+            userStatusTextView.setText("تکمیل نشده");
+            userStatusTextView.setTextColor(
+                    itemView.getContext()
+                            .getResources().getColor(R.color.errorColor));
+        }
     }
 }

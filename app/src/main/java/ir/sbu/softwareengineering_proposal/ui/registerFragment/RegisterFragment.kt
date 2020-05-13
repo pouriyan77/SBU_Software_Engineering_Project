@@ -51,7 +51,7 @@ class RegisterFragment : Fragment(R.layout.fragment_register), RegisterContract.
         super.onViewCreated(view, savedInstanceState)
 
         registerBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_registerFragment_to_professorListFragment)
+//            findNavController().navigate(R.id.action_registerFragment_to_professorListFragment)
         }
     }
 

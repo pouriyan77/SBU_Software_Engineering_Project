@@ -32,7 +32,8 @@ public class ProposalViewHolder extends RecyclerViewHolder<Proposal> {
     @Override
     public void bind(Proposal item) {
         proposalNameTextView.setText(item.getTitle());
-        studentNameProposalTextView.setText(item.getFirstName().concat(" ").concat(item.getLastName()));
+        studentNameProposalTextView.setText(
+                item.getOwner().getFirstName().concat(" ").concat(item.getOwner().getLastName()));
         if (adapter == null) {
             adapter = new FieldOfStudyRecyclerAdapter(item.getFieldsOfStudy());
         }

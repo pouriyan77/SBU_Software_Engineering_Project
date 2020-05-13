@@ -25,7 +25,7 @@
         <item name="android:textSize">14sp</item>
     </style>
 
-    <style name="AppTheme.WhiteAccent">
+    <style name="AppTheme.PinkAccent">
         <item name="colorAccent">@color/colorPrimary</item>
     </style>
     

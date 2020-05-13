@@ -4,11 +4,12 @@ import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
-class Professor(
-    val profId: Int,
-    val degree: String?,
+class Student(
+    val stdId: Int,
+    val studentNumber: String?,
+    val type: String?,
+    val grade: String?,
     val major: Major?,
-    val fieldsOfStudy: List<String>,
     override val id: Int,
     override val nationalCode: String,
     override val firstName: String,

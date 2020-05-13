@@ -11,7 +11,6 @@ import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.adapter.MarginSpacingItemDecoration
 import ir.sbu.softwareengineering_proposal.adapter.RecyclerViewInteraction
 import ir.sbu.softwareengineering_proposal.adapter.professorsRecycler.ProfessorsRecyclerAdapter
-import ir.sbu.softwareengineering_proposal.utils.fakeProfessors
 import kotlinx.android.synthetic.main.fragment_professor_list.*
 
 class ProfessorListFragment : Fragment(R.layout.fragment_professor_list), RecyclerViewInteraction {
@@ -23,7 +22,7 @@ class ProfessorListFragment : Fragment(R.layout.fragment_professor_list), Recycl
 
     private fun setupRecyclerView() {
         professorsRecyclerView?.apply {
-            adapter = ProfessorsRecyclerAdapter(fakeProfessors, this@ProfessorListFragment)
+//            adapter = ProfessorsRecyclerAdapter(fakeProfessors, this@ProfessorListFragment)
             addItemDecoration(MarginSpacingItemDecoration(20))
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }

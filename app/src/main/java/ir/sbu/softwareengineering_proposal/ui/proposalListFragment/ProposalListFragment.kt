@@ -8,7 +8,7 @@ import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.adapter.MarginSpacingItemDecoration
 import ir.sbu.softwareengineering_proposal.adapter.RecyclerViewInteraction
 import ir.sbu.softwareengineering_proposal.adapter.proposalRecycler.ProposalRecyclerAdapter
-import ir.sbu.softwareengineering_proposal.utils.fakeProposal
+//import ir.sbu.softwareengineering_proposal.utils.fakeProposal
 import kotlinx.android.synthetic.main.fragment_proposal_list.*
 
 class ProposalListFragment : Fragment(R.layout.fragment_proposal_list), RecyclerViewInteraction {
@@ -20,7 +20,7 @@ class ProposalListFragment : Fragment(R.layout.fragment_proposal_list), Recycler
 
     private fun setupRecyclerView() {
         proposalsRecyclerView?.apply {
-            adapter = ProposalRecyclerAdapter(fakeProposal, this@ProposalListFragment)
+//            adapter = ProposalRecyclerAdapter(fakeProposal, this@ProposalListFragment)
             addItemDecoration(MarginSpacingItemDecoration(20))
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         }

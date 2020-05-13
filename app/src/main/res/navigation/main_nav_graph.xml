@@ -17,14 +17,43 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_modifyUserByHimself"
+            app:destination="@id/modifyUserByHimself"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_proposalListFragment"
+            app:destination="@id/proposalListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_chooseUsersToEditFragment"
+            app:destination="@id/chooseUsersToEditFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="ir.sbu.softwareengineering_proposal.ui.registerFragment.RegisterFragment"
-        android:label="RegisterFragment" >
+        android:label="RegisterFragment"
+        tools:layout="@layout/fragment_register">
         <action
-            android:id="@+id/action_registerFragment_to_professorListFragment"
-            app:destination="@id/professorListFragment"
+            android:id="@+id/action_registerFragment_to_modifyProfessorByAdmin"
+            app:destination="@id/modifyProfessorByAdmin"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_registerFragment_to_modifyStudentByAdmin"
+            app:destination="@id/modifyStudentByAdmin"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
@@ -35,4 +64,61 @@
         android:name="ir.sbu.softwareengineering_proposal.ui.professorListFragment.ProfessorListFragment"
         android:label="fragment_professor_list"
         tools:layout="@layout/fragment_professor_list" />
+    <fragment
+        android:id="@+id/modifyUserByHimself"
+        android:name="ir.sbu.softwareengineering_proposal.ui.modifyUserByHimself.ModifyUserByHimself"
+        android:label="ModifyUserByHimself"
+        tools:layout="@layout/fragment_modify_user_by_himself"/>
+    <fragment
+        android:id="@+id/modifyProfessorByAdmin"
+        android:name="ir.sbu.softwareengineering_proposal.ui.modifyProfessorByAdmin.ModifyProfessorByAdmin"
+        android:label="ModifyProfessorByAdmin"
+        tools:layout="@layout/fragment_modify_professor_by_admin"/>
+    <fragment
+        android:id="@+id/modifyStudentByAdmin"
+        android:name="ir.sbu.softwareengineering_proposal.ui.modifyStudentByAdmin.ModifyStudentByAdmin"
+        android:label="ModifyStudentByAdmin"
+        tools:layout="@layout/fragment_modify_student_by_admin"/>
+    <fragment
+        android:id="@+id/proposalListFragment"
+        android:name="ir.sbu.softwareengineering_proposal.ui.proposalListFragment.ProposalListFragment"
+        android:label="fragment_users_list_for_admin"
+        tools:layout="@layout/fragment_users_list_for_admin" />
+    <fragment
+        android:id="@+id/usersListForAdmin2"
+        android:name="ir.sbu.softwareengineering_proposal.ui.usersListForAdminFragment.UsersListForAdmin"
+        android:label="UsersListForAdmin"
+        tools:layout="@layout/fragment_users_list_for_admin">
+
+        <argument
+            android:name="type"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_usersListForAdmin2_to_modifyProfessorByAdmin"
+            app:destination="@id/modifyProfessorByAdmin"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_usersListForAdmin2_to_modifyStudentByAdmin"
+            app:destination="@id/modifyStudentByAdmin"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/chooseUsersToEditFragment"
+        android:name="ir.sbu.softwareengineering_proposal.ui.chooseUsersToEditFragment.ChooseUsersToEditFragment"
+        android:label="ChooseUsersToEditFragment"
+        tools:layout="@layout/fragment_choose_users_to_edit">
+        <action
+            android:id="@+id/action_chooseUsersToEditFragment_to_usersListForAdmin2"
+            app:destination="@id/usersListForAdmin2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
 </navigation>

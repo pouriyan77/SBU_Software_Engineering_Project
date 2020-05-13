@@ -20,7 +20,7 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:fontFamily="@font/iran_sans_bold_6"
-            android:text="ویرایش اطلاعات دانشجویان"
+            android:text="ویرایش اطلاعات استاد"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/title_font_size" />
 
