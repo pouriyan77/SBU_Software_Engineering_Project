@@ -1,7 +1,9 @@
 package ir.sbu.softwareengineering_proposal.api
 
+import ir.sbu.softwareengineering_proposal.api.responses.GenericResponse
 import ir.sbu.softwareengineering_proposal.api.responses.GetUsersResponse
 import ir.sbu.softwareengineering_proposal.api.responses.LoginResponse
+import ir.sbu.softwareengineering_proposal.api.responses.RegisterResponse
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -26,5 +28,9 @@ interface ApiService {
         @Query("type") type: String?
     ): Call<GetUsersResponse>
 
+    @POST("register")
+    fun register(
+        @Body registerUserRequest: RegisterUserRequest
+    ): Call<RegisterResponse>
 
 }

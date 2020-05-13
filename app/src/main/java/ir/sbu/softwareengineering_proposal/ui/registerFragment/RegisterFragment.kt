@@ -1,16 +1,15 @@
 package ir.sbu.softwareengineering_proposal.ui.registerFragment
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ir.sbu.softwareengineering_proposal.R
-import ir.sbu.softwareengineering_proposal.session.SessionManager
+import ir.sbu.softwareengineering_proposal.api.RegisterUserRequest
+import ir.sbu.softwareengineering_proposal.utils.groupManagerRoleId
 import ir.sbu.softwareengineering_proposal.utils.longToast
-import kotlinx.android.synthetic.main.activity_login.*
+import ir.sbu.softwareengineering_proposal.utils.professorRoleId
+import ir.sbu.softwareengineering_proposal.utils.studentRoleId
 import kotlinx.android.synthetic.main.fragment_register.*
 import kotlinx.android.synthetic.main.loading_button.view.*
 
@@ -18,18 +17,45 @@ class RegisterFragment : Fragment(R.layout.fragment_register), RegisterContract.
 
     private lateinit var presenter: RegisterContract.Presenter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //setContentView(R.layout.fragment_register)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         presenter = RegisterPresenterImpl(this)
-        //setupOnClicks()
+        setupViews()
     }
 
-    private fun setUpOnClicks() {
+    private fun setupViews() {
+        registerBtn.button.text = "ثبت نام"
+
         registerBtn.button.setOnClickListener {
             showProgressBar(true)
             if (checkRegisterFields()) {
-                //requestRegister
+                if (checkRepeatPassword()){
+                    if (registerNationalNumber.text.toString().length == 10){
+                        val roleId = when(registerRadioGroup.checkedRadioButtonId){
+                            profRadio.id -> professorRoleId
+                            departmentManagerRadio.id -> groupManagerRoleId
+                            studentRadio.id -> studentRoleId
+                            else -> professorRoleId
+                        }
+                        presenter.requestRegister(
+                            RegisterUserRequest(
+                                registerName.text.toString().trim(),
+                                registerLastName.text.toString().trim(),
+                                registerEmail.text.toString().trim(),
+                                registerNationalNumber.text.toString().trim(),
+                                registerPassword.text.toString().trim(),
+                                registerRepeatPassword.text.toString().trim(),
+                                roleId
+                            )
+                        )
+                    }else{
+                        showToast("کد ملی باید ده رقم باشد")
+                        showProgressBar(false)
+                    }
+                }else{
+                    showToast("رمز عبور و تکرارش یکسان نیستند")
+                    showProgressBar(false)
+                }
             }
             else {
                 showToast("لطفا همه فیلدها را پر کنید")
@@ -47,22 +73,17 @@ class RegisterFragment : Fragment(R.layout.fragment_register), RegisterContract.
                 !registerRepeatPassword.text.isNullOrBlank()
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-        registerBtn.setOnClickListener {
-//            findNavController().navigate(R.id.action_registerFragment_to_professorListFragment)
-        }
-    }
+    private fun checkRepeatPassword() =
+        (registerPassword.text.toString().trim() == registerRepeatPassword.text.toString().trim())
 
     override fun showToast(message: String) {
         context?.longToast(message)
     }
 
-    override fun successfulRegister(session: SessionManager) {
-        TODO("Not yet implemented")
+    override fun successfulRegister(userId: Int) {
+        showToast("کاربر با موفقیت ثبت شد")
+        findNavController().navigateUp()
     }
-
 
     override fun showProgressBar(show: Boolean) {
         registerBtn.button.isEnabled = !show

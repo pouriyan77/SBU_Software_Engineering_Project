@@ -73,12 +73,23 @@
         android:id="@+id/modifyProfessorByAdmin"
         android:name="ir.sbu.softwareengineering_proposal.ui.modifyProfessorByAdmin.ModifyProfessorByAdmin"
         android:label="ModifyProfessorByAdmin"
-        tools:layout="@layout/fragment_modify_professor_by_admin"/>
+        tools:layout="@layout/fragment_modify_professor_by_admin">
+
+        <argument
+            android:name="PROFESSOR"
+            app:argType="ir.sbu.softwareengineering_proposal.model.Professor" />
+    </fragment>
     <fragment
         android:id="@+id/modifyStudentByAdmin"
         android:name="ir.sbu.softwareengineering_proposal.ui.modifyStudentByAdmin.ModifyStudentByAdmin"
         android:label="ModifyStudentByAdmin"
-        tools:layout="@layout/fragment_modify_student_by_admin"/>
+        tools:layout="@layout/fragment_modify_student_by_admin">
+
+        <argument
+            android:name="STUDENT"
+            app:argType="ir.sbu.softwareengineering_proposal.model.Student"
+            />
+    </fragment>
     <fragment
         android:id="@+id/proposalListFragment"
         android:name="ir.sbu.softwareengineering_proposal.ui.proposalListFragment.ProposalListFragment"
