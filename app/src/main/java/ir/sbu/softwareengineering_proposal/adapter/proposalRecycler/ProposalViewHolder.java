@@ -24,7 +24,7 @@ public class ProposalViewHolder extends RecyclerViewHolder<Proposal> {
 
     public ProposalViewHolder(@NotNull View itemView, @Nullable RecyclerViewInteraction interaction) {
         super(itemView, interaction);
-        proposalNameTextView = itemView.findViewById(R.id.professorNameTextView);
+        proposalNameTextView = itemView.findViewById(R.id.ProposalNameTextView);
         studentNameProposalTextView = itemView.findViewById(R.id.studentNameProposalTextView);
         fieldOfStudyRecyclerView2 = itemView.findViewById(R.id.fieldOfStudyRecyclerView2);
     }

@@ -4,6 +4,7 @@ import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.model.DeskItem
 import ir.sbu.softwareengineering_proposal.model.Professor
 import ir.sbu.softwareengineering_proposal.model.Proposal
+import ir.sbu.softwareengineering_proposal.model.User
 
 const val BASE_URL = "https://warm-tundra-16580.herokuapp.com/api/"
 
@@ -72,4 +73,9 @@ val fakeProposal = listOf(
 
 )
 
-// تعیین استاد راهنما -> ایکون
+val fakeUsers = listOf(
+    User("", "کیمیا", "آقایی", "", 1),
+    User("", "علیرضا", "شاملی", "", 1),
+    User("", "کیمیا", "آقایی", "", 1)
+)
+
