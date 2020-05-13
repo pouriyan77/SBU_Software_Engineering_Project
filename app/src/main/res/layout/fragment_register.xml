@@ -257,7 +257,7 @@
                 android:text="دانشجو" />
         </RadioGroup>
 
-        <Button
+        <!--<Button
             android:id="@+id/registerBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -268,7 +268,18 @@
             android:fontFamily="@font/iran_sans_1"
             android:text="ثبت اطلاعات"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" />-->
+
+        <include layout="@layout/loading_button"
+            android:id="@+id/registerBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="64dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginHorizontal="@dimen/forms_with_margin"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
     </LinearLayout>
 
 </ScrollView>
