@@ -13,7 +13,7 @@
         android:padding="@dimen/standard_margin">
 
         <TextView
-            android:id="@+id/register_text_view"
+            android:id="@+id/registerTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -26,7 +26,7 @@
 
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputLayout_register1"
+            android:id="@+id/textInputLayoutRegister1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
@@ -43,7 +43,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 app:hintTextColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent"
-                android:id="@+id/register_name"
+                android:id="@+id/registerName"
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/colorAccent"
                 android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
         <com.google.android.material.textfield.TextInputLayout
             app:hintTextColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
-            android:id="@+id/textInputLayout_register2"
+            android:id="@+id/textInputLayoutRegister2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
@@ -71,7 +71,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_last_name"
+                android:id="@+id/registerLastName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
@@ -86,7 +86,7 @@
         <com.google.android.material.textfield.TextInputLayout
             app:hintTextColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
-            android:id="@+id/textInputLayout_register3"
+            android:id="@+id/textInputLayoutRegister3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
@@ -99,7 +99,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_email"
+                android:id="@+id/registerEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
@@ -115,7 +115,7 @@
         <com.google.android.material.textfield.TextInputLayout
             app:hintTextColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
-            android:id="@+id/textInputLayout_register4"
+            android:id="@+id/textInputLayoutRegister4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
@@ -130,7 +130,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 app:hintTextColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent"
-                android:id="@+id/register_password"
+                android:id="@+id/registerPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
@@ -146,7 +146,7 @@
         <com.google.android.material.textfield.TextInputLayout
             app:hintTextColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
-            android:id="@+id/textInputLayout_register5"
+            android:id="@+id/textInputLayoutRegister5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
@@ -159,7 +159,7 @@
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/register_repeat_password"
+                android:id="@+id/registerRepeatPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
@@ -176,7 +176,7 @@
         <com.google.android.material.textfield.TextInputLayout
             app:hintTextColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
-            android:id="@+id/textInputLayout_register6"
+            android:id="@+id/textInputLayoutRegister6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
@@ -195,7 +195,7 @@
                 android:backgroundTint="@color/colorAccent"
                 app:hintTextColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent"
-                android:id="@+id/register_national_number"
+                android:id="@+id/registerNationalNumber"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
@@ -222,11 +222,12 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/registerRadioGroup"
             android:gravity="center"
             android:orientation="horizontal">
 
             <RadioButton
-                android:id="@+id/prof_radio"
+                android:id="@+id/profRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
@@ -236,7 +237,7 @@
                 android:text="استاد" />
 
             <RadioButton
-                android:id="@+id/department_manager_radio"
+                android:id="@+id/departmentManagerRadio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
@@ -246,7 +247,7 @@
                 android:text="مدیرگروه" />
 
             <RadioButton
-                android:id="@+id/student_radio"
+                android:id="@+id/StudentRadio"
                 android:buttonTint="@color/colorAccent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
