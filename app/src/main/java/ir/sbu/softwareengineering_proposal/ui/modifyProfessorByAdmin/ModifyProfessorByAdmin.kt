@@ -77,7 +77,7 @@ ModifyProfessorByAdminContract.View {
         }else{
             modifyProfByAdminButton.button.background =
                 resources.getDrawable(R.drawable.login_button_selector, null)
-            modifyProfByAdminButton.button.text = "ورود"
+            modifyProfByAdminButton.button.text = "تغییر اطلاعات"
         }
     }
 

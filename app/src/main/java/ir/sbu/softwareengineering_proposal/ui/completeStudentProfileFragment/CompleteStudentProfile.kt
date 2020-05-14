@@ -1,61 +1,64 @@
 package ir.sbu.softwareengineering_proposal.ui.completeStudentProfileFragment
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-
+import androidx.fragment.app.Fragment
 import ir.sbu.softwareengineering_proposal.R
+import ir.sbu.softwareengineering_proposal.session.SessionManager
+import ir.sbu.softwareengineering_proposal.utils.longToast
+import kotlinx.android.synthetic.main.fragment_complete_student_profile.*
+import kotlinx.android.synthetic.main.loading_button.view.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class CompleteStudentProfile : CompleteStudentProfileContract.View,
+    Fragment(R.layout.fragment_complete_student_profile) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [CompleteStudentProfile.newInstance] factory method to
- * create an instance of this fragment.
- */
-class CompleteStudentProfile : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var presenter: CompleteStudentProfileContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        presenter = CompleteStudentProfilePresenterImpl(this)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+    }
+
+    private fun setupOnClicks() {
+        completeStudentProfileBtn.button.setOnClickListener {
+            showProgressBar(true)
+            if (checkCompleteStudentProfileFields()) {
+                //request
+            } else {
+                showToast("لطفا همه فیلد ها را پر کنید")
+                showProgressBar(false)
+            }
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_complete_student_profile, container, false)
+    private fun checkCompleteStudentProfileFields(): Boolean {
+        return true
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CompleteStudentProfile.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CompleteStudentProfile().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun showToast(message: String) {
+        context?.longToast(message)
+    }
+
+    override fun successfulLogin(session: SessionManager) {
+        TODO("Not yet implemented")
+    }
+
+    override fun showProgressBar(show: Boolean) {
+        completeStudentProfileBtn.button.isEnabled = !show
+        if (show) {
+            completeStudentProfileBtn.button.background =
+                resources.getDrawable(R.drawable.loading_button_selector, null)
+            completeStudentProfileBtn.button.text = ""
+        } else {
+            completeStudentProfileBtn.button.background =
+                resources.getDrawable(R.drawable.login_button_selector, null)
+            completeStudentProfileBtn.button.text = "تکمیل اطلاعات"
+        }
+
     }
 }
+

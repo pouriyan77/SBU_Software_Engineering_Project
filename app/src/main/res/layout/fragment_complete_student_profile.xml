@@ -1,14 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.completeStudentProfileFragment.CompleteStudentProfile">
+    android:layout_height="match_parent">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/standard_margin">
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/completeStudentProfileTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:fontFamily="@font/iran_sans_bold_6"
+            android:text="تکمیل اطلاعات دانشجو"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_font_size" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            app:hintTextColor="@color/colorAccent"
+            android:textColorHint="@color/colorAccent"
+            android:id="@+id/completeStudentProfileStudentNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/forms_with_margin"
+            android:layout_marginTop="@dimen/standard_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            app:counterEnabled="true"
+            app:counterOverflowTextAppearance="@style/usernameCounterStyle"
+            app:counterTextAppearance="@style/usernameCounterStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:counterMaxLength="8"
+            app:counterTextColor="@color/colorAccent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:backgroundTint="@color/colorAccent"
+                app:hintTextColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent"
+                android:id="@+id/completeStudentProfileStudentNumberTextInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/iran_sans_1"
+                android:gravity="center"
+                android:hint="شماره دانشجویی"
+                android:maxLength="8"
+                android:inputType="number"
+                android:maxLines="1" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/forms_with_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:fontFamily="@font/iran_sans_1"
+            android:text="نوع تحصیل"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_font_size" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/completeStudentProfileEducationTypeRadio"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/completeStudentProfileEducationTypeRadio1"
+                android:fontFamily="@font/iran_sans_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:checked="true"
+                android:buttonTint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
+                android:text="روزانه" />
+
+            <RadioButton
+                android:id="@+id/completeStudentProfileEducationTypeRadio2"
+                android:fontFamily="@font/iran_sans_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:buttonTint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
+                android:checked="false"
+                android:text="شبانه" />
+
+            <RadioButton
+                android:id="@+id/completeStudentProfileEducationTypeRadio3"
+                android:buttonTint="@color/colorAccent"
+                android:layout_width="wrap_content"
+                android:fontFamily="@font/iran_sans_1"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:checked="false"
+                android:textColor="@color/colorAccent"
+                android:text="پردیس" />
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/forms_with_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:fontFamily="@font/iran_sans_1"
+            android:text="مقطع"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_font_size" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/completeStudentProfileLevelRadio"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:fontFamily="@font/iran_sans_1"
+                android:id="@+id/completeStudentProfileLevelRadio4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:checked="true"
+                android:buttonTint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
+                android:text="کارشناسی ارشد" />
+
+            <RadioButton
+                android:id="@+id/completeStudentProfileLevelRadio5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:buttonTint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
+                android:fontFamily="@font/iran_sans_1"
+                android:checked="false"
+                android:text="دکتری" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginTop="@dimen/forms_with_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:layout_marginBottom="@dimen/standard_margin"
+            android:fontFamily="@font/iran_sans_1"
+            android:text="گروه آموزشی"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/title_font_size" />
+
+
+        <Button
+            android:id="@+id/academicDepartmentBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/forms_with_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/login_button_selector"
+            android:fontFamily="@font/iran_sans_1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="مشاهده لیست"
+            android:textColor="@android:color/white" />
+
+        <include layout="@layout/loading_button"
+            android:id="@+id/completeStudentProfileBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/forms_with_margin"
+            android:layout_marginTop="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+        <!--<Button
+            android:id="@+id/modifyStudentByAdminButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/forms_with_margin"
+            android:layout_marginTop="@dimen/forms_with_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:background="@drawable/login_button_selector"
+            android:fontFamily="@font/iran_sans_1"
+            android:text="ثبت تغییرات"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:textColor="@android:color/white" />-->
+    </LinearLayout>
+
+</ScrollView>

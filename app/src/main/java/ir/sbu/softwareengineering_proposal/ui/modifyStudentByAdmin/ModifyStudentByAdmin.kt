@@ -72,7 +72,7 @@ class ModifyStudentByAdmin : Fragment(R.layout.fragment_modify_student_by_admin)
         }else{
             modifyStudentByAdminBtn.button.background =
                 resources.getDrawable(R.drawable.login_button_selector, null)
-            modifyStudentByAdminBtn.button.text = "ورود"
+            modifyStudentByAdminBtn.button.text = "تغییر اطلاعات"
         }
     }
 
