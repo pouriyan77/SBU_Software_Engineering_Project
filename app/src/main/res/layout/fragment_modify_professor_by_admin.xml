@@ -2,9 +2,9 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/background"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,26 +32,26 @@
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
-            app:hintTextColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
+            app:hintTextColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/firstNameEditText"
-                app:hintTextColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
                 android:layout_width="match_parent"
-                android:backgroundTint="@color/colorAccent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
                 android:hint="نام"
                 android:inputType="text"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textColorHint="@color/colorAccent"
+                app:hintTextColor="@color/colorAccent" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -62,40 +62,40 @@
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
-            app:hintTextColor="@color/colorAccent"
             android:textColorHint="@color/colorAccent"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
+            app:hintTextColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
-                app:hintTextColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
                 android:id="@+id/modifyProfByAdminLastNameTextInput"
                 android:layout_width="match_parent"
-                android:backgroundTint="@color/colorAccent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
                 android:hint="نام خانوادگی"
                 android:inputType="text"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textColorHint="@color/colorAccent"
+                app:hintTextColor="@color/colorAccent" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:hintTextColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
             android:id="@+id/modifyProfByAdminEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
+            android:textColorHint="@color/colorAccent"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
+            app:hintTextColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
@@ -104,57 +104,57 @@
                 android:id="@+id/modifyProfByAdminEmailTextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
                 android:hint="ایمیل"
-                android:backgroundTint="@color/colorAccent"
                 android:inputType="textEmailAddress"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:hintTextColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
             android:id="@+id/modifyProfByAdminPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
+            android:textColorHint="@color/colorAccent"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
+            app:hintTextColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
-                app:hintTextColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
                 android:id="@+id/modifyProfByAdminPasswordTextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
+                android:hint="رمز عبور"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPassword"
-                android:hint="رمز عبور"
-                android:backgroundTint="@color/colorAccent"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textColorHint="@color/colorAccent"
+                app:hintTextColor="@color/colorAccent" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:hintTextColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
             android:id="@+id/modifyProfByAdminCPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
+            android:textColorHint="@color/colorAccent"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
+            app:hintTextColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
@@ -163,44 +163,44 @@
                 android:id="@+id/modifyProfByAdminCPasswordTextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
+                android:hint="تکرار رمز عبور"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPassword"
-                android:hint="تکرار رمز عبور"
-                android:backgroundTint="@color/colorAccent"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            app:hintTextColor="@color/colorAccent"
-            android:textColorHint="@color/colorAccent"
             android:id="@+id/modifyProfByAdminDegree"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/forms_with_margin"
             android:layout_marginTop="@dimen/standard_margin"
             android:layout_marginRight="@dimen/forms_with_margin"
+            android:textColorHint="@color/colorAccent"
             app:counterOverflowTextAppearance="@style/usernameCounterStyle"
             app:counterTextAppearance="@style/usernameCounterStyle"
+            app:hintTextColor="@color/colorAccent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
             <com.google.android.material.textfield.TextInputEditText
-                app:hintTextColor="@color/colorAccent"
-                android:textColorHint="@color/colorAccent"
                 android:id="@+id/modifyProfByAdminDegreeTextInput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorAccent"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
+                android:hint="مدرک"
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="text"
-                android:hint="مدرک"
-                android:backgroundTint="@color/colorAccent"
-                android:maxLines="1" />
+                android:maxLines="1"
+                android:textColorHint="@color/colorAccent"
+                app:hintTextColor="@color/colorAccent" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -217,9 +217,9 @@
             android:textSize="@dimen/title_font_size" />
 
         <RadioGroup
+            android:id="@+id/modifyProfByAdminEducationTypeRadio"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/modifyProfByAdminEducationTypeRadio"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -228,10 +228,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
-                android:checked="true"
                 android:buttonTint="@color/colorAccent"
-                android:textColor="@color/colorAccent"
-                android:text="استادیار" />
+                android:checked="true"
+                android:fontFamily="@font/iran_sans_1"
+                android:text="استادیار"
+                android:textColor="@color/colorAccent" />
 
             <RadioButton
                 android:id="@+id/scienceAssistantRadio"
@@ -239,23 +240,54 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 android:buttonTint="@color/colorAccent"
-                android:textColor="@color/colorAccent"
                 android:checked="false"
-                android:text="دانشیار" />
+                android:fontFamily="@font/iran_sans_1"
+                android:text="دانشیار"
+                android:textColor="@color/colorAccent" />
 
             <RadioButton
                 android:id="@+id/fullProfessorRadio"
-                android:buttonTint="@color/colorAccent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
+                android:buttonTint="@color/colorAccent"
                 android:checked="false"
-                android:textColor="@color/colorAccent"
-                android:text="استاد" />
+                android:fontFamily="@font/iran_sans_1"
+                android:text="استاد"
+                android:textColor="@color/colorAccent" />
         </RadioGroup>
 
-        <include layout="@layout/loading_button"
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginTop="@dimen/forms_with_margin"
+                android:layout_marginRight="@dimen/forms_with_margin"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:fontFamily="@font/iran_sans_1"
+                android:text="گروه آموزشی"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/title_font_size" />
+
+
+        <Button
+            android:id="@+id/academicDepartmentBtn"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/forms_with_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:background="@drawable/login_button_selector"
+            android:fontFamily="@font/iran_sans_1"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="مشاهده لیست"
+            android:textColor="@android:color/white" />
+
+        <include
             android:id="@+id/modifyProfByAdminButton"
+            layout="@layout/loading_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/forms_with_margin"

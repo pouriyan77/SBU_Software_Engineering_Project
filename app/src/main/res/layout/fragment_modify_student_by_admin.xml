@@ -263,6 +263,7 @@
 
             <RadioButton
                 android:id="@+id/modifyStudentByAdminRadio1"
+                android:fontFamily="@font/iran_sans_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
@@ -273,6 +274,7 @@
 
             <RadioButton
                 android:id="@+id/modifyStudentByAdminRadio2"
+                android:fontFamily="@font/iran_sans_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
@@ -285,6 +287,7 @@
                 android:id="@+id/modifyStudentByAdminRadio3"
                 android:buttonTint="@color/colorAccent"
                 android:layout_width="wrap_content"
+                android:fontFamily="@font/iran_sans_1"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 android:checked="false"
@@ -313,6 +316,7 @@
             android:orientation="horizontal">
 
             <RadioButton
+                android:fontFamily="@font/iran_sans_1"
                 android:id="@+id/modifyStudentByAdminRadio4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -329,6 +333,7 @@
                 android:layout_marginRight="@dimen/activity_vertical_margin"
                 android:buttonTint="@color/colorAccent"
                 android:textColor="@color/colorAccent"
+                android:fontFamily="@font/iran_sans_1"
                 android:checked="false"
                 android:text="دکتری" />
 
@@ -342,7 +347,7 @@
             android:layout_marginRight="@dimen/forms_with_margin"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
             android:fontFamily="@font/iran_sans_1"
-            android:text="سال ورود"
+            android:text=""
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/title_font_size" />
 

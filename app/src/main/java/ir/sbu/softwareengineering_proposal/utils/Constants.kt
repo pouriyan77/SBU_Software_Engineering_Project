@@ -1,10 +1,7 @@
 package ir.sbu.softwareengineering_proposal.utils
 
 import ir.sbu.softwareengineering_proposal.R
-import ir.sbu.softwareengineering_proposal.model.DeskItem
-import ir.sbu.softwareengineering_proposal.model.Professor
-import ir.sbu.softwareengineering_proposal.model.Proposal
-import ir.sbu.softwareengineering_proposal.model.User
+import ir.sbu.softwareengineering_proposal.model.*
 
 const val BASE_URL = "https://warm-tundra-16580.herokuapp.com/api/"
 const val PRE_TOKEN = "Bearer "
@@ -79,4 +76,12 @@ val professorDeskItem = listOf<DeskItem>(
 //    User(2, "", "علیرضا", "شاملی", "", 1),
 //    User(3, "", "کیمیا", "آقایی", "", 1)
 //)
+
+val fakeAcademicList = listOf<Major>(
+    Major(1, "مهندسی نرم افزار و سیستم های اطلاعاتی"),
+    Major(2, "هوش مصنوعی و سیستم های خبره"),
+    Major(3, "معماری کامپیوتر"),
+    Major(4, "امنیت شبکه"),
+    Major(5, "الگوریتم")
+)
 
