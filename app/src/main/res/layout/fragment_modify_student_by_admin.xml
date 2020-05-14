@@ -346,7 +346,18 @@
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/title_font_size" />
 
-        <Button
+        <include layout="@layout/loading_button"
+            android:id="@+id/modifyStudentByAdminBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/forms_with_margin"
+            android:layout_marginTop="64dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
+
+        <!--<Button
             android:id="@+id/modifyStudentByAdminButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -357,7 +368,7 @@
             android:fontFamily="@font/iran_sans_1"
             android:text="ثبت تغییرات"
             android:layout_marginBottom="@dimen/activity_vertical_margin"
-            android:textColor="@android:color/white" />
+            android:textColor="@android:color/white" />-->
     </LinearLayout>
 
 </ScrollView>
