@@ -6,10 +6,10 @@ interface ModifyUserByHimselfContract {
     interface View {
         fun showToast(message: String)
         fun showProgressBar(show: Boolean)
-        fun successfulModify(session: SessionManager)
+        fun successfulModify(newEmail: String)
     }
 
     interface Presenter{
-        fun requestLogin(nationalCode: String, password: String)
+        fun requestModify(authToken: String, email: String, password: String?)
     }
 }

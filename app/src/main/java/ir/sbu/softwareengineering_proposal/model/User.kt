@@ -10,7 +10,7 @@ open class User(
     @SerializedName("national_number") open val nationalCode: String,
     @SerializedName("first_name") open val firstName: String,
     @SerializedName("last_name") open val lastName: String,
-    @SerializedName("email") open val email: String,
+    @SerializedName("email") open var email: String,
     @SerializedName("role_id") open val roleId: Int,
     open val completeProfileStatus: Boolean
 ) : Parcelable {

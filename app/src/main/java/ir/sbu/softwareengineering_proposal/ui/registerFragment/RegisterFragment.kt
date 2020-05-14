@@ -5,7 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ir.sbu.softwareengineering_proposal.R
-import ir.sbu.softwareengineering_proposal.api.RegisterUserRequest
+import ir.sbu.softwareengineering_proposal.api.requests.RegisterUserRequest
 import ir.sbu.softwareengineering_proposal.utils.groupManagerRoleId
 import ir.sbu.softwareengineering_proposal.utils.longToast
 import ir.sbu.softwareengineering_proposal.utils.professorRoleId

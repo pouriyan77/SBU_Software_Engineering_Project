@@ -1,4 +1,4 @@
-package ir.sbu.softwareengineering_proposal.api
+package ir.sbu.softwareengineering_proposal.api.requests
 
 import com.google.gson.annotations.SerializedName
 
