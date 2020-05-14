@@ -1,8 +1,6 @@
 package ir.sbu.softwareengineering_proposal.ui.registerFragment
 
-import ir.sbu.softwareengineering_proposal.api.RegisterUserRequest
-import ir.sbu.softwareengineering_proposal.model.User
-import ir.sbu.softwareengineering_proposal.session.SessionManager
+import ir.sbu.softwareengineering_proposal.api.requests.RegisterUserRequest
 
 interface RegisterContract {
 

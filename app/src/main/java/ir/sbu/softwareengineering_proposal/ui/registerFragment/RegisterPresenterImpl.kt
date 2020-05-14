@@ -1,6 +1,6 @@
 package ir.sbu.softwareengineering_proposal.ui.registerFragment
 
-import ir.sbu.softwareengineering_proposal.api.RegisterUserRequest
+import ir.sbu.softwareengineering_proposal.api.requests.RegisterUserRequest
 import ir.sbu.softwareengineering_proposal.api.RetrofitBuilder
 import ir.sbu.softwareengineering_proposal.api.responses.GenericResponse
 import ir.sbu.softwareengineering_proposal.api.responses.RegisterResponse

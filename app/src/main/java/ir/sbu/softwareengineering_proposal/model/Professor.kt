@@ -13,7 +13,7 @@ class Professor(
     override val nationalCode: String,
     override val firstName: String,
     override val lastName: String,
-    override val email: String,
+    override var email: String,
     override val roleId: Int,
     override val completeProfileStatus: Boolean
 ): User(id, nationalCode, firstName, lastName, email, roleId, completeProfileStatus)

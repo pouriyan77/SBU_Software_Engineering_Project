@@ -1,9 +1,7 @@
 package ir.sbu.softwareengineering_proposal.api
 
-import ir.sbu.softwareengineering_proposal.api.responses.GenericResponse
-import ir.sbu.softwareengineering_proposal.api.responses.GetUsersResponse
-import ir.sbu.softwareengineering_proposal.api.responses.LoginResponse
-import ir.sbu.softwareengineering_proposal.api.responses.RegisterResponse
+import ir.sbu.softwareengineering_proposal.api.requests.RegisterUserRequest
+import ir.sbu.softwareengineering_proposal.api.responses.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -32,5 +30,13 @@ interface ApiService {
     fun register(
         @Body registerUserRequest: RegisterUserRequest
     ): Call<RegisterResponse>
+
+    @FormUrlEncoded
+    @POST("modify_profile")
+    fun modifyUserByHimSelf(
+        @Header("Authorization") authorization: String,
+        @Field("email") email: String,
+        @Field("password") newPassword: String?
+    ): Call<ModifyUserByHimSelfResponse>
 
 }
