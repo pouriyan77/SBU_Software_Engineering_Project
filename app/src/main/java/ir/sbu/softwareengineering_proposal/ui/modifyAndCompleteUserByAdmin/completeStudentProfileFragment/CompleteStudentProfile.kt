@@ -1,26 +1,30 @@
-package ir.sbu.softwareengineering_proposal.ui.completeStudentProfileFragment
+package ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.completeStudentProfileFragment
 
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import ir.sbu.softwareengineering_proposal.R
-import ir.sbu.softwareengineering_proposal.session.SessionManager
+import ir.sbu.softwareengineering_proposal.model.Major
+import ir.sbu.softwareengineering_proposal.ui.academicDepartmentListFragment.AcademicDepartmentListFragment
+import ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.ModifyAndCompleteUserContract
+import ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.ModifyAndCompleteUserPresenterImpl
 import ir.sbu.softwareengineering_proposal.utils.longToast
 import kotlinx.android.synthetic.main.fragment_complete_student_profile.*
 import kotlinx.android.synthetic.main.loading_button.view.*
 
-class CompleteStudentProfile : CompleteStudentProfileContract.View,
-    Fragment(R.layout.fragment_complete_student_profile) {
+class CompleteStudentProfile : Fragment(R.layout.fragment_complete_student_profile),
+    ModifyAndCompleteUserContract.View,
+    AcademicDepartmentListFragment.OnSelectDepartmentListener {
 
-    private lateinit var presenter: CompleteStudentProfileContract.Presenter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        presenter = CompleteStudentProfilePresenterImpl(this)
-    }
+    private lateinit var presenter: ModifyAndCompleteUserContract.Presenter
+    private var selectedMajor: Major? = null
+    private lateinit var departmentDialog: AcademicDepartmentListFragment
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter = ModifyAndCompleteUserPresenterImpl(this)
+        departmentDialog = AcademicDepartmentListFragment(this)
+        completeStudentProfileBtn.button.text = "تکمیل اطلاعات"
     }
 
     private fun setupOnClicks() {
@@ -43,8 +47,8 @@ class CompleteStudentProfile : CompleteStudentProfileContract.View,
         context?.longToast(message)
     }
 
-    override fun successfulLogin(session: SessionManager) {
-        TODO("Not yet implemented")
+    override fun successfulModify() {
+
     }
 
     override fun showProgressBar(show: Boolean) {
@@ -58,7 +62,12 @@ class CompleteStudentProfile : CompleteStudentProfileContract.View,
                 resources.getDrawable(R.drawable.login_button_selector, null)
             completeStudentProfileBtn.button.text = "تکمیل اطلاعات"
         }
+    }
 
+    override fun onSelectDepartment(major: Major) {
+        selectedMajor = major
+        academicDepartmentBtn.text = major.title
+        departmentDialog.dismiss()
     }
 }
 

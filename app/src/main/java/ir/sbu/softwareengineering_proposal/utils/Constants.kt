@@ -18,6 +18,14 @@ const val judgeProposalStr = "داوری پروپوزال"
 const val setSupervisorStr = "تعیین استاد راهنما"
 const val setJudgeStr = "مشخص کردن داور"
 
+const val STUDENT_BA_GRADE = ""
+const val STUDENT_MA_GRADE = ""
+const val STUDENT_PHD_GRADE = ""
+
+const val STUDENT_ROOZANE_STUDY_TYPE = "roozane"
+const val STUDENT_SHABANE_STUDY_TYPE = "shabane"
+const val STUDENT_PARDIS_STUDY_TYPE = "pardis"
+
 
 val adminDeskItems = listOf<DeskItem>(
     DeskItem(addUserStr, R.mipmap.add_user_icon),

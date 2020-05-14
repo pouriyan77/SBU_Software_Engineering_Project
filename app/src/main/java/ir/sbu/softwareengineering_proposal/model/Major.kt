@@ -8,5 +8,4 @@ import kotlinx.android.parcel.Parcelize
 class Major(
     @SerializedName("id") val id: Int,
     @SerializedName("title") val title: String
-) : Parcelable {
-}
+) : Parcelable

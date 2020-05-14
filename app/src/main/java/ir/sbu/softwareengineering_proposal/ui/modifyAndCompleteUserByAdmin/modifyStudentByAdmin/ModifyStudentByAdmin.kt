@@ -1,36 +1,38 @@
-package ir.sbu.softwareengineering_proposal.ui.modifyStudentByAdmin
+package ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.modifyStudentByAdmin
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 
 import ir.sbu.softwareengineering_proposal.R
+import ir.sbu.softwareengineering_proposal.model.Major
 import ir.sbu.softwareengineering_proposal.model.Student
-import ir.sbu.softwareengineering_proposal.session.SessionManager
+import ir.sbu.softwareengineering_proposal.ui.academicDepartmentListFragment.AcademicDepartmentListFragment
+import ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.ModifyAndCompleteUserContract
+import ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.ModifyAndCompleteUserPresenterImpl
 import ir.sbu.softwareengineering_proposal.utils.longToast
 import kotlinx.android.synthetic.main.fragment_modify_student_by_admin.*
 import kotlinx.android.synthetic.main.loading_button.view.*
 
 class ModifyStudentByAdmin : Fragment(R.layout.fragment_modify_student_by_admin),
-    ModifyStudentByAdminContract.View {
+    ModifyAndCompleteUserContract.View, AcademicDepartmentListFragment.OnSelectDepartmentListener {
 
     private lateinit var student: Student
-    private lateinit var presenter: ModifyStudentByAdminContract.Presenter
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_login)
-        presenter = ModifyStudentByAdminPresenterImpl(this)
-        //setupOnClicks()
-    }
+    private lateinit var presenter: ModifyAndCompleteUserContract.Presenter
+    private lateinit var departmentDialog: AcademicDepartmentListFragment
+    private var selectedMajor: Major? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        presenter = ModifyAndCompleteUserPresenterImpl(this)
         student = arguments?.getParcelable("STUDENT")!!
+        departmentDialog = AcademicDepartmentListFragment(this)
         setupViews()
+        setupOnCLicks()
     }
 
     private fun setupViews() {
+        modifyStudentByAdminBtn.button.text = "تغییر اطلاعات"
         firstNameEditText.setText(student.firstName)
         modifyStudentByAdminLastNameTextInput.setText(student.lastName)
         modifyStudentByAdminEmailTextInput.setText(student.email)
@@ -39,7 +41,7 @@ class ModifyStudentByAdmin : Fragment(R.layout.fragment_modify_student_by_admin)
     }
 
     private fun checkModifyStudentFields(): Boolean {
-        return true;
+        return true
     }
 
     private fun setupOnCLicks() {
@@ -52,16 +54,20 @@ class ModifyStudentByAdmin : Fragment(R.layout.fragment_modify_student_by_admin)
                 showProgressBar(false)
             }
         }
+
+        academicDepartmentBtn.setOnClickListener {
+            departmentDialog.show(childFragmentManager, null)
+        }
     }
 
     override fun showToast(message: String) {
-        TODO("Not yet implemented")
         context?.longToast(message)
     }
 
-    override fun successfulModify(session: SessionManager) {
-        TODO("Not yet implemented")
+    override fun successfulModify() {
+
     }
+
 
     override fun showProgressBar(show: Boolean) {
         modifyStudentByAdminBtn.button.isEnabled = !show
@@ -74,6 +80,12 @@ class ModifyStudentByAdmin : Fragment(R.layout.fragment_modify_student_by_admin)
                 resources.getDrawable(R.drawable.login_button_selector, null)
             modifyStudentByAdminBtn.button.text = "تغییر اطلاعات"
         }
+    }
+
+    override fun onSelectDepartment(major: Major) {
+        selectedMajor = major
+        academicDepartmentBtn.text = major.title
+        departmentDialog.dismiss()
     }
 
 }

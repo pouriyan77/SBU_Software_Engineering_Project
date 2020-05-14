@@ -71,7 +71,7 @@
         tools:layout="@layout/fragment_modify_user_by_himself"/>
     <fragment
         android:id="@+id/modifyProfessorByAdmin"
-        android:name="ir.sbu.softwareengineering_proposal.ui.modifyProfessorByAdmin.ModifyProfessorByAdmin"
+        android:name="ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.modifyProfessorByAdmin.ModifyProfessorByAdmin"
         android:label="ModifyProfessorByAdmin"
         tools:layout="@layout/fragment_modify_professor_by_admin">
 
@@ -81,7 +81,7 @@
     </fragment>
     <fragment
         android:id="@+id/modifyStudentByAdmin"
-        android:name="ir.sbu.softwareengineering_proposal.ui.modifyStudentByAdmin.ModifyStudentByAdmin"
+        android:name="ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.modifyStudentByAdmin.ModifyStudentByAdmin"
         android:label="ModifyStudentByAdmin"
         tools:layout="@layout/fragment_modify_student_by_admin">
 

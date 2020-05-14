@@ -12,4 +12,6 @@
     <dimen name="settings_item_icon_size">40dp</dimen>
     <dimen name="userImageSize">60dp</dimen>
     <dimen name="cardStandardCorner">8dp</dimen>
+    <dimen name="popupWidth">350dp</dimen>
+    <dimen name="popupHeight">400dp</dimen>
 </resources>

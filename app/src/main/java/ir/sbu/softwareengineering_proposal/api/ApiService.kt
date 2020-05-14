@@ -1,5 +1,7 @@
 package ir.sbu.softwareengineering_proposal.api
 
+import ir.sbu.softwareengineering_proposal.api.requests.ModifyUserByAdminRequest
+import ir.sbu.softwareengineering_proposal.api.requests.ProfAndStudentModifyDetails
 import ir.sbu.softwareengineering_proposal.api.requests.RegisterUserRequest
 import ir.sbu.softwareengineering_proposal.api.responses.*
 import retrofit2.Call
@@ -39,4 +41,14 @@ interface ApiService {
         @Field("password") newPassword: String?
     ): Call<ModifyUserByHimSelfResponse>
 
+    @GET("major")
+    fun getAllMajors(
+        @Header("Authorization") authorization: String
+    ): Call<MajorsResponse>
+
+    @POST("modify_user")
+    fun modifyUserByAdmin(
+        @Header("Authorization") authorization: String,
+        @Body modifyUserByAdminRequest: ModifyUserByAdminRequest
+    ): Call<GenericResponse>
 }
