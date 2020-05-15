@@ -7,5 +7,12 @@ abstract class RecyclerViewHolder<T>
     (itemView : View, interaction : RecyclerViewInteraction? = null)
     : RecyclerView.ViewHolder(itemView)
 {
+
+    init {
+        itemView.setOnClickListener {
+            interaction?.onItemClickedListener(adapterPosition)
+        }
+    }
+
     abstract fun bind(item : T)
 }

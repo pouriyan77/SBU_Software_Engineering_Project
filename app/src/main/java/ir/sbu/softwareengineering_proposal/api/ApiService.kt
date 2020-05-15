@@ -49,6 +49,17 @@ interface ApiService {
     @POST("modify_user")
     fun modifyUserByAdmin(
         @Header("Authorization") authorization: String,
-        @Body modifyUserByAdminRequest: ModifyUserByAdminRequest
+        @Body modifyUserByAdminRequest: ModifyUserByAdminRequest,
+        @Header("Accept") accept: String = "application/json"
     ): Call<GenericResponse>
+
+    @POST("get_proposals_information")
+    fun getAllProposals(
+        @Header("Authorization") authorization: String
+    ): Call<GetProposalsResponse>
+
+    @POST("get_assigned_proposal")
+    fun getAssignedProposals(
+        @Header("Authorization") authorization: String
+    ): Call<GetProposalsResponse>
 }
