@@ -206,18 +206,18 @@
             android:tint="@color/cardMainColor"
             app:srcCompat="@mipmap/upload_icon_64" />
 
-        <include
+        <Button
             android:id="@+id/uploadProposalBtn"
-            layout="@layout/loading_button"
-            android:layout_width="150dp"
+            android:layout_width="100dp"
             android:layout_gravity="center"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/forms_with_margin"
-            android:layout_marginTop="@dimen/standard_margin"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageViewForUpload" />
+            android:layout_marginLeft="@dimen/forms_with_margin"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginRight="@dimen/forms_with_margin"
+            android:background="@drawable/login_button_selector"
+            android:fontFamily="@font/iran_sans_1"
+            android:text="انتخاب فایل"
+            android:textColor="@android:color/white" />
 
         <TextView
             android:id="@+id/keywordsForProposal"
@@ -235,7 +235,7 @@
             tools:text="thesis.pdf" />
 
         <include layout="@layout/loading_button"
-            android:id="@+id/registerBtn"
+            android:id="@+id/uploadFinalProposal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="64dp"
