@@ -12,4 +12,5 @@
     <color name="gray">#616161</color>
     <color name="errorColor">#d50000</color>
     <color name="successColor">#1faa00</color>
+    <color name="revisionColor">#FFE300</color>
 </resources>
