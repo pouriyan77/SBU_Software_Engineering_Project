@@ -11,21 +11,13 @@ import ir.sbu.softwareengineering_proposal.session.SessionManager
 import kotlinx.android.synthetic.main.fragment_examine_proposal.*
 import kotlinx.android.synthetic.main.loading_button.view.*
 
-/**
- * A simple [Fragment] subclass.
- */
-class ExamineProposal : Fragment(), ExamineProposalContract.View {
+class ExamineProposal : Fragment(R.layout.fragment_examine_proposal), ExamineProposalContract.View {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_examine_proposal, container, false)
-    }
+    private lateinit var presenter: ExamineProposalContract.Presenter
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        presenter = ExamineProposalPresenterImpl(this)
     }
 
     private fun setupOnClicks() {
@@ -44,11 +36,11 @@ class ExamineProposal : Fragment(), ExamineProposalContract.View {
     }
 
     override fun showToast(message: String) {
-        TODO("Not yet implemented")
+
     }
 
     override fun successfulLogin(session: SessionManager) {
-        TODO("Not yet implemented")
+
     }
 
     override fun showProgressBar(show: Boolean) {

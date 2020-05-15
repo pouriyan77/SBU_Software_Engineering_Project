@@ -19,6 +19,7 @@ import ir.sbu.softwareengineering_proposal.model.Proposal;
 public class ProposalViewHolder extends RecyclerViewHolder<Proposal> {
     private TextView proposalNameTextView;
     private TextView studentNameProposalTextView;
+    private TextView hasSupervisorTextView;
     private RecyclerView fieldOfStudyRecyclerView2;
     private FieldOfStudyRecyclerAdapter adapter;
 
@@ -27,6 +28,7 @@ public class ProposalViewHolder extends RecyclerViewHolder<Proposal> {
         proposalNameTextView = itemView.findViewById(R.id.ProposalNameTextView);
         studentNameProposalTextView = itemView.findViewById(R.id.studentNameProposalTextView);
         fieldOfStudyRecyclerView2 = itemView.findViewById(R.id.fieldOfStudyRecyclerView2);
+        hasSupervisorTextView = itemView.findViewById(R.id.hasSupervisorTextView);
     }
 
     @Override
@@ -36,6 +38,11 @@ public class ProposalViewHolder extends RecyclerViewHolder<Proposal> {
                 item.getOwner().getFirstName().concat(" ").concat(item.getOwner().getLastName()));
         if (adapter == null) {
             adapter = new FieldOfStudyRecyclerAdapter(item.getFieldsOfStudy());
+        }
+        if (item.getSupervisor() == null){
+            hasSupervisorTextView.setVisibility(View.VISIBLE);
+        }else {
+            hasSupervisorTextView.setVisibility(View.GONE);
         }
         fieldOfStudyRecyclerView2.setAdapter(adapter);
         fieldOfStudyRecyclerView2.addItemDecoration(new HorizontalSpacingItemDecoration(3));

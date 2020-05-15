@@ -38,6 +38,13 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_uploadProposal"
+            app:destination="@id/uploadProposal"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -98,7 +105,19 @@
         android:id="@+id/proposalListFragment"
         android:name="ir.sbu.softwareengineering_proposal.ui.proposalListFragment.ProposalListFragment"
         android:label="fragment_users_list_for_admin"
-        tools:layout="@layout/fragment_users_list_for_admin" />
+        tools:layout="@layout/fragment_users_list_for_admin">
+
+        <argument
+            android:name="LIST_TYPE"
+            app:argType="integer"/>
+        <action
+            android:id="@+id/action_proposalListFragment_to_examineProposal"
+            app:destination="@id/examineProposal"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
     <fragment
         android:id="@+id/usersListForAdmin2"
         android:name="ir.sbu.softwareengineering_proposal.ui.usersListForAdminFragment.UsersListForAdmin"
@@ -174,4 +193,14 @@
             android:name="USER_ID"
             app:argType="integer" />
     </fragment>
+    <fragment
+        android:id="@+id/uploadProposal"
+        android:name="ir.sbu.softwareengineering_proposal.ui.uploadProposalFragment.UploadProposal"
+        android:label="UploadProposal"
+        tools:layout="@layout/fragment_upload_proposal"/>
+    <fragment
+        android:id="@+id/examineProposal"
+        android:name="ir.sbu.softwareengineering_proposal.ui.examineProposalFragment.ExamineProposal"
+        android:label="ExamineProposal"
+        tools:layout="@layout/fragment_examine_proposal"/>
 </navigation>

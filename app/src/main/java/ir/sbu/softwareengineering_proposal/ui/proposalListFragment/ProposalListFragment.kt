@@ -3,6 +3,7 @@ package ir.sbu.softwareengineering_proposal.ui.proposalListFragment
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.adapter.MarginSpacingItemDecoration
@@ -10,6 +11,9 @@ import ir.sbu.softwareengineering_proposal.adapter.RecyclerViewInteraction
 import ir.sbu.softwareengineering_proposal.adapter.proposalRecycler.ProposalRecyclerAdapter
 import ir.sbu.softwareengineering_proposal.model.Proposal
 import ir.sbu.softwareengineering_proposal.ui.mainActivity.MainActivity
+import ir.sbu.softwareengineering_proposal.utils.PROPOSAL_LIST_ADMIN_TYPE
+import ir.sbu.softwareengineering_proposal.utils.PROPOSAL_LIST_GROUP_MANAGER_TYPE
+import ir.sbu.softwareengineering_proposal.utils.PROPOSAL_LIST_PROFESSOR_TYPE
 import ir.sbu.softwareengineering_proposal.utils.longToast
 import kotlinx.android.synthetic.main.activity_main.*
 //import ir.sbu.softwareengineering_proposal.utils.fakeProposal
@@ -20,15 +24,24 @@ class ProposalListFragment : Fragment(R.layout.fragment_proposal_list),
 
     private lateinit var proposalList: List<Proposal>
     private lateinit var presenter: ProposalListContract.Presenter
+    private var listType = -1
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        listType = requireArguments().getInt("LIST_TYPE")
         presenter = ProposalListPresenterImpl(this)
         requestProposals()
     }
 
     private fun requestProposals() {
-
+        showProgressBar(true)
+        val authToken = (activity as MainActivity).sessionManager!!.authToken
+        when(listType){
+            PROPOSAL_LIST_ADMIN_TYPE -> presenter.requestAllProposals(authToken)
+            PROPOSAL_LIST_GROUP_MANAGER_TYPE -> presenter.requestAllProposals(authToken)
+            PROPOSAL_LIST_PROFESSOR_TYPE -> presenter.requestAssignedProposals(authToken)
+            else -> showProgressBar(false)
+        }
     }
 
     private fun setupRecyclerView(proposalList: List<Proposal>) {
@@ -42,7 +55,11 @@ class ProposalListFragment : Fragment(R.layout.fragment_proposal_list),
 
     override fun onItemClickedListener(position: Int) {
         val proposal = proposalList[position]
-        showToast(proposal.persianTitle)
+        if (listType == PROPOSAL_LIST_PROFESSOR_TYPE){
+            findNavController().navigate(R.id.action_proposalListFragment_to_examineProposal)
+        }else {
+            showToast(proposal.persianTitle)
+        }
     }
 
     override fun showToast(message: String) {

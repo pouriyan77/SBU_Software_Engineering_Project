@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -61,10 +62,23 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
     override fun onItemClickedListener(position: Int) {
         val name = deskItems[position].name
 
-        when(name)
-        {
+        when(name) {
+
             addUserStr -> findNavController().navigate(R.id.action_mainFragment_to_registerFragment)
             editUserStr -> findNavController().navigate(R.id.action_mainFragment_to_chooseUsersToEditFragment)
+            setSupervisorStr -> {
+                val bundle = bundleOf("LIST_TYPE" to PROPOSAL_LIST_ADMIN_TYPE)
+                findNavController().navigate(R.id.action_mainFragment_to_proposalListFragment, bundle)
+            }
+            setJudgeStr -> {
+                val bundle = bundleOf("LIST_TYPE" to PROPOSAL_LIST_GROUP_MANAGER_TYPE)
+                findNavController().navigate(R.id.action_mainFragment_to_proposalListFragment, bundle)
+            }
+            judgeProposalStr -> {
+                val bundle = bundleOf("LIST_TYPE" to PROPOSAL_LIST_PROFESSOR_TYPE)
+                findNavController().navigate(R.id.action_mainFragment_to_proposalListFragment, bundle)
+            }
+            uploadProposalStr -> findNavController().navigate(R.id.action_mainFragment_to_uploadProposal)
             else -> Toast.makeText(context, name, Toast.LENGTH_LONG).show()
         }
     }

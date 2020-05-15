@@ -18,6 +18,10 @@ const val judgeProposalStr = "داوری پروپوزال"
 const val setSupervisorStr = "تعیین استاد راهنما"
 const val setJudgeStr = "مشخص کردن داور"
 
+const val PROPOSAL_LIST_ADMIN_TYPE = 1
+const val PROPOSAL_LIST_PROFESSOR_TYPE = 2
+const val PROPOSAL_LIST_GROUP_MANAGER_TYPE = 3
+
 const val STUDENT_BA_GRADE = ""
 const val STUDENT_MA_GRADE = ""
 const val STUDENT_PHD_GRADE = ""

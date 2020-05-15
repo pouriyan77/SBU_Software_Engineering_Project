@@ -9,5 +9,5 @@ class Proposal(
     val proposalType: String,
     val fieldsOfStudy: List<String> = listOf("یادگیری ماشین", "داده کاوی"),
     val owner: Student,
-    val supervisor: Professor?
+    var supervisor: Professor?
 )

@@ -11,21 +11,10 @@ import ir.sbu.softwareengineering_proposal.session.SessionManager
 import kotlinx.android.synthetic.main.fragment_upload_proposal.*
 import kotlinx.android.synthetic.main.loading_button.view.*
 
-/**
- * A simple [Fragment] subclass.
- */
-class UploadProposal : Fragment(), UploadProposalContract.View {
+class UploadProposal : Fragment(R.layout.fragment_upload_proposal), UploadProposalContract.View {
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_upload_proposal, container, false)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun checkUploadProposalFields(): Boolean {
@@ -45,11 +34,11 @@ class UploadProposal : Fragment(), UploadProposalContract.View {
 
 
     override fun showToast(message: String) {
-        TODO("Not yet implemented")
+
     }
 
     override fun successfulLogin(session: SessionManager) {
-        TODO("Not yet implemented")
+
     }
 
     override fun showProgressBar(show: Boolean) {
