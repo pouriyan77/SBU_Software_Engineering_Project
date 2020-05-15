@@ -2,6 +2,7 @@ package ir.sbu.softwareengineering_proposal.ui.registerFragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ir.sbu.softwareengineering_proposal.R
@@ -16,6 +17,7 @@ import kotlinx.android.synthetic.main.loading_button.view.*
 class RegisterFragment : Fragment(R.layout.fragment_register), RegisterContract.View {
 
     private lateinit var presenter: RegisterContract.Presenter
+    private var isStudent: Boolean = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -31,10 +33,14 @@ class RegisterFragment : Fragment(R.layout.fragment_register), RegisterContract.
             if (checkRegisterFields()) {
                 if (checkRepeatPassword()){
                     if (registerNationalNumber.text.toString().length == 10){
+                        isStudent = false
                         val roleId = when(registerRadioGroup.checkedRadioButtonId){
                             profRadio.id -> professorRoleId
                             departmentManagerRadio.id -> groupManagerRoleId
-                            studentRadio.id -> studentRoleId
+                            studentRadio.id -> {
+                                isStudent = true
+                                studentRoleId
+                            }
                             else -> professorRoleId
                         }
                         presenter.requestRegister(
@@ -82,7 +88,14 @@ class RegisterFragment : Fragment(R.layout.fragment_register), RegisterContract.
 
     override fun successfulRegister(userId: Int) {
         showToast("کاربر با موفقیت ثبت شد")
-        findNavController().navigateUp()
+        val bundle = bundleOf("USER_ID" to userId)
+        if (isStudent){
+            findNavController().navigate(
+                R.id.action_registerFragment_to_completeStudentProfile, bundle)
+        }else{
+            findNavController().navigate(
+                R.id.action_registerFragment_to_completeProfessorProfile, bundle)
+        }
     }
 
     override fun showProgressBar(show: Boolean) {

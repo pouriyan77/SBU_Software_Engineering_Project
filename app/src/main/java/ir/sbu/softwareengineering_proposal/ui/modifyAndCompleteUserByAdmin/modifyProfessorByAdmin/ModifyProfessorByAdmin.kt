@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import android.widget.RadioButton
+import androidx.navigation.fragment.findNavController
 
 import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.api.requests.ModifyUserByAdminRequest
@@ -128,7 +129,7 @@ class ModifyProfessorByAdmin : Fragment(R.layout.fragment_modify_professor_by_ad
     }
 
     override fun successfulModify() {
-
+        findNavController().navigateUp()
     }
 
     override fun showProgressBar(show: Boolean) {

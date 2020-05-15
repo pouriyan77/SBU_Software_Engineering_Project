@@ -3,9 +3,13 @@ package ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.comp
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import ir.sbu.softwareengineering_proposal.R
+import ir.sbu.softwareengineering_proposal.api.requests.ModifyUserByAdminRequest
+import ir.sbu.softwareengineering_proposal.api.requests.ProfAndStudentModifyDetails
 import ir.sbu.softwareengineering_proposal.model.Major
 import ir.sbu.softwareengineering_proposal.ui.academicDepartmentListFragment.AcademicDepartmentListFragment
+import ir.sbu.softwareengineering_proposal.ui.mainActivity.MainActivity
 import ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.ModifyAndCompleteUserContract
 import ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.ModifyAndCompleteUserPresenterImpl
 import ir.sbu.softwareengineering_proposal.utils.longToast
@@ -19,27 +23,64 @@ class CompleteStudentProfile : Fragment(R.layout.fragment_complete_student_profi
     private lateinit var presenter: ModifyAndCompleteUserContract.Presenter
     private var selectedMajor: Major? = null
     private lateinit var departmentDialog: AcademicDepartmentListFragment
+    private var userId: Int = -1
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter = ModifyAndCompleteUserPresenterImpl(this)
+        userId = requireArguments().getInt("USER_ID")
         departmentDialog = AcademicDepartmentListFragment(this)
-        completeStudentProfileBtn.button.text = "تکمیل اطلاعات"
+        setupOnClicks()
     }
 
     private fun setupOnClicks() {
+        completeStudentProfileBtn.button.text = "تکمیل اطلاعات"
         completeStudentProfileBtn.button.setOnClickListener {
             showProgressBar(true)
-            if (checkCompleteStudentProfileFields()) {
-                //request
+            val request = ModifyUserByAdminRequest(
+                userId,
+                null,
+                null,
+                null,
+                null,
+                null,
+                ProfAndStudentModifyDetails(
+                    -1, null, null, null, null
+                )
+            )
+            if (checkCompleteStudentProfileFields(request)) {
+                presenter.requestModify((activity as MainActivity).sessionManager!!.authToken, request)
             } else {
-                showToast("لطفا همه فیلد ها را پر کنید")
                 showProgressBar(false)
             }
         }
+
+        academicDepartmentBtn.setOnClickListener {
+            departmentDialog.show(childFragmentManager, null)
+        }
     }
 
-    private fun checkCompleteStudentProfileFields(): Boolean {
+    private fun checkCompleteStudentProfileFields(request: ModifyUserByAdminRequest): Boolean {
+        if (selectedMajor == null) {
+            showToast("لطفا گروه آموزشی را مشخص کنید")
+            return false
+        }
+        request.details.majorId = selectedMajor!!.id
+        if (!completeStudentProfileStudentNumberTextInput.text.isNullOrBlank()){
+            if (completeStudentProfileStudentNumberTextInput.text.toString().length != 8){
+                showToast("شماره دانشجویی باید هشت رقم باشد")
+                return false
+            }
+            request.details.studentNumber =
+                completeStudentProfileStudentNumberTextInput.text.toString().toInt()
+        }
+        if (selectedMajor == null){
+            showToast("لطفا گروه آموزشی را مشخص کنید")
+            return false
+        }
+        request.details.majorId = selectedMajor!!.id
+
+        // to do type and grade and enter year
         return true
     }
 
@@ -48,7 +89,8 @@ class CompleteStudentProfile : Fragment(R.layout.fragment_complete_student_profi
     }
 
     override fun successfulModify() {
-
+        showToast("اظلاعات دانشجو با موفقیت تکمیل شد")
+        findNavController().navigate(R.id.action_completeStudentProfile_to_registerFragment)
     }
 
     override fun showProgressBar(show: Boolean) {

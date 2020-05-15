@@ -45,19 +45,23 @@
         android:label="RegisterFragment"
         tools:layout="@layout/fragment_register">
         <action
-            android:id="@+id/action_registerFragment_to_modifyProfessorByAdmin"
-            app:destination="@id/modifyProfessorByAdmin"
+            android:id="@+id/action_registerFragment_to_completeStudentProfile"
+            app:destination="@id/completeStudentProfile"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true"/>
         <action
-            android:id="@+id/action_registerFragment_to_modifyStudentByAdmin"
-            app:destination="@id/modifyStudentByAdmin"
+            android:id="@+id/action_registerFragment_to_completeProfessorProfile"
+            app:destination="@id/completeProfessorProfile"
             app:enterAnim="@anim/slide_in_right"
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"/>
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/professorListFragment"
@@ -131,5 +135,43 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
+    <fragment
+        android:id="@+id/completeProfessorProfile"
+        android:name="ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.completeProfessorProfileFragment.CompleteProfessorProfile"
+        android:label="CompleteProfessorProfile"
+        tools:layout="@layout/fragment_complete_professor_profile">
+        <action
+            android:id="@+id/action_completeProfessorProfile_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/completeProfessorProfile"
+            app:popUpToInclusive="true"/>
+
+        <argument
+            android:name="USER_ID"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/completeStudentProfile"
+        android:name="ir.sbu.softwareengineering_proposal.ui.modifyAndCompleteUserByAdmin.completeStudentProfileFragment.CompleteStudentProfile"
+        android:label="CompleteStudentProfile"
+        tools:layout="@layout/fragment_complete_student_profile">
+        <action
+            android:id="@+id/action_completeStudentProfile_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/completeStudentProfile"
+            app:popUpToInclusive="true"/>
+
+        <argument
+            android:name="USER_ID"
+            app:argType="integer" />
     </fragment>
 </navigation>
