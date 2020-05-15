@@ -41,9 +41,13 @@ val studentDeskItems = listOf<DeskItem>(
     DeskItem(uploadProposalStr, R.mipmap.upload_proposal_icon)
 )
 
-val professorDeskItem = listOf<DeskItem>(
+val groupManagerDeskItems = listOf<DeskItem>(
     DeskItem(judgeProposalStr, R.mipmap.judge_icon),
     DeskItem(setJudgeStr, R.mipmap.judge_icon)
+)
+
+val professorDeskItems = listOf<DeskItem>(
+    DeskItem(judgeProposalStr, R.mipmap.judge_icon)
 )
 
 //val fakeProfessors = listOf(

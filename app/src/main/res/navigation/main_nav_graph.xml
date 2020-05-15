@@ -202,5 +202,11 @@
         android:id="@+id/examineProposal"
         android:name="ir.sbu.softwareengineering_proposal.ui.examineProposalFragment.ExamineProposal"
         android:label="ExamineProposal"
-        tools:layout="@layout/fragment_examine_proposal"/>
+        tools:layout="@layout/fragment_examine_proposal">
+
+        <argument
+            android:name="PROPOSAL"
+            app:argType="ir.sbu.softwareengineering_proposal.model.Proposal"
+            />
+    </fragment>
 </navigation>

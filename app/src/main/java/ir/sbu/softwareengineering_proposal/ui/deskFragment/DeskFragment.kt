@@ -53,8 +53,8 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
         deskItems = when(user.roleId){
             adminRoleId -> adminDeskItems
             studentRoleId -> studentDeskItems
-            groupManagerRoleId -> professorDeskItem
-            professorRoleId -> professorDeskItem
+            groupManagerRoleId -> groupManagerDeskItems
+            professorRoleId -> professorDeskItems
             else -> adminDeskItems
         }
     }

@@ -2,6 +2,7 @@ package ir.sbu.softwareengineering_proposal.ui.proposalListFragment
 
 import android.os.Bundle
 import android.view.View
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -55,8 +56,9 @@ class ProposalListFragment : Fragment(R.layout.fragment_proposal_list),
 
     override fun onItemClickedListener(position: Int) {
         val proposal = proposalList[position]
+        val bundle = bundleOf("PROPOSAL" to proposal)
         if (listType == PROPOSAL_LIST_PROFESSOR_TYPE){
-            findNavController().navigate(R.id.action_proposalListFragment_to_examineProposal)
+            findNavController().navigate(R.id.action_proposalListFragment_to_examineProposal, bundle)
         }else {
             showToast(proposal.persianTitle)
         }
