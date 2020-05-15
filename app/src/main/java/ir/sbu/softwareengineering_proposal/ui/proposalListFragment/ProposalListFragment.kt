@@ -60,7 +60,7 @@ class ProposalListFragment : Fragment(R.layout.fragment_proposal_list),
         if (listType == PROPOSAL_LIST_PROFESSOR_TYPE){
             findNavController().navigate(R.id.action_proposalListFragment_to_examineProposal, bundle)
         }else {
-            showToast(proposal.persianTitle)
+            findNavController().navigate(R.id.action_proposalListFragment_to_professorListFragment)
         }
     }
 

@@ -16,11 +16,10 @@ interface ApiService {
         @Field("password") password: String
     ): Call<LoginResponse>
 
-    @FormUrlEncoded
     @POST("get_professors_information")
     fun getAllProfessors(
         @Header("Authorization") authorization: String
-    ): Call<LoginResponse>
+    ): Call<ProfessorsResponse>
 
     @GET("users")
     fun getAllUsersForAdmin(
@@ -62,4 +61,14 @@ interface ApiService {
     fun getAssignedProposals(
         @Header("Authorization") authorization: String
     ): Call<GetProposalsResponse>
+
+    @FormUrlEncoded
+    @POST("define_supervisor")
+    fun defineSupervisor(
+        @Header("Authorization") authorization: String,
+        @Field("student_id") studentId: Int,
+        @Field("professor_id") supervisorId: Int,
+        @Field("proposal_id") proposalId: Int,
+        @Header("Accept") accept: String = "application/json"
+    ): Call<GenericResponse>
 }
