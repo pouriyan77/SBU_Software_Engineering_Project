@@ -48,6 +48,7 @@
                 android:backgroundTint="@color/colorAccent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
+                android:textColor="@color/colorAccent"
                 android:gravity="center"
                 android:hint="نام"
                 android:inputType="text"
@@ -80,6 +81,7 @@
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
                 android:hint="نام خانوادگی"
+                android:textColor="@color/colorAccent"
                 android:inputType="text"
                 android:maxLines="1" />
 
@@ -108,6 +110,7 @@
                 android:gravity="center"
                 android:hint="ایمیل"
                 android:backgroundTint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
                 android:inputType="textEmailAddress"
                 android:maxLines="1" />
 
@@ -137,6 +140,7 @@
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
                 android:imeOptions="flagNoExtractUi"
+                android:textColor="@color/colorAccent"
                 android:inputType="textPassword"
                 android:hint="رمز عبور"
                 android:backgroundTint="@color/colorAccent"
@@ -168,6 +172,7 @@
                 android:imeOptions="flagNoExtractUi"
                 android:inputType="textPassword"
                 android:hint="تکرار رمز عبور"
+                android:textColor="@color/colorAccent"
                 android:backgroundTint="@color/colorAccent"
                 android:maxLines="1" />
 
@@ -202,6 +207,7 @@
                 android:gravity="center"
                 android:hint="شماره دانشجویی"
                 android:maxLength="8"
+                android:textColor="@color/colorAccent"
                 android:inputType="number"
                 android:maxLines="1" />
 
@@ -236,6 +242,7 @@
                 android:gravity="center"
                 android:hint="سال ورود"
                 android:maxLength="4"
+                android:textColor="@color/colorAccent"
                 android:inputType="number"
                 android:maxLines="1" />
 

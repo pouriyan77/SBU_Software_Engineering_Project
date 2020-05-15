@@ -50,6 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
+                android:textColor="@color/colorAccent"
                 android:gravity="center"
                 android:hint="شماره دانشجویی"
                 android:maxLength="8"

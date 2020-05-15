@@ -54,6 +54,7 @@
                 android:inputType="textPassword"
                 android:maxLines="1"
                 android:textColorHint="@color/colorAccent"
+                android:textColor="@color/colorAccent"
                 app:hintTextColor="@color/colorAccent" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -82,6 +83,7 @@
                 android:gravity="center"
                 android:hint="ایمیل"
                 android:inputType="textEmailAddress"
+                android:textColor="@color/colorAccent"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
