@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder
 import ir.sbu.softwareengineering_proposal.utils.BASE_URL
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
@@ -23,7 +24,7 @@ object RetrofitBuilder
                 )
                 chain.proceed(request)
             }
-//        httpClientBuilder.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+        httpClientBuilder.addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
         return@lazy httpClientBuilder.build()
     }
 
