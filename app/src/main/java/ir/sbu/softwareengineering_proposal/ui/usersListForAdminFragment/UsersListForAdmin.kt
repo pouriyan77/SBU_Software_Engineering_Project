@@ -65,9 +65,9 @@ class UsersListForAdmin : Fragment(R.layout.fragment_users_list_for_admin),
 
     override fun showProgressBar(show: Boolean) {
         if (show) {
-            (activity as MainActivity).loadingProgressBar.visibility = View.VISIBLE
+            (requireActivity() as MainActivity).loadingProgressBar.visibility = View.VISIBLE
         }else{
-            (activity as MainActivity).loadingProgressBar.visibility = View.GONE
+            (requireActivity() as MainActivity).loadingProgressBar.visibility = View.GONE
         }
     }
 

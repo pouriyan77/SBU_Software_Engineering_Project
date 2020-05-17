@@ -37,7 +37,11 @@ public class ProfessorItemViewHolder extends RecyclerViewHolder<Professor> {
         professorNameTextView.setText(item.getFirstName().concat(" ").concat(item.getLastName()));
 //        facultyTextView.setText(item.getFaculty());
         degreeTextView.setText(item.getDegree());
-        educationalGroupTextView.setText(item.getMajor().getTitle());
+        if (item.getMajor() != null) {
+            educationalGroupTextView.setText(item.getMajor().getTitle());
+        }else {
+            educationalGroupTextView.setText("مشخص نشده");
+        }
         if (adapter == null){
             adapter = new FieldOfStudyRecyclerAdapter(item.getFieldsOfStudy());
         }
