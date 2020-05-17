@@ -76,9 +76,9 @@ class AcademicDepartmentListFragment() : DialogFragment(),
 
     override fun showProgressBar(show: Boolean) {
         if(show){
-            progressBar.visibility = View.VISIBLE
+            progressBar?.visibility = View.VISIBLE
         }else{
-            progressBar.visibility = View.GONE
+            progressBar?.visibility = View.GONE
         }
     }
 

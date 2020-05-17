@@ -11,6 +11,7 @@ import ir.sbu.softwareengineering_proposal.adapter.MarginSpacingItemDecoration
 import ir.sbu.softwareengineering_proposal.adapter.RecyclerViewInteraction
 import ir.sbu.softwareengineering_proposal.adapter.proposalRecycler.ProposalRecyclerAdapter
 import ir.sbu.softwareengineering_proposal.model.Proposal
+import ir.sbu.softwareengineering_proposal.ui.BaseFragment
 import ir.sbu.softwareengineering_proposal.ui.mainActivity.MainActivity
 import ir.sbu.softwareengineering_proposal.utils.PROPOSAL_LIST_ADMIN_TYPE
 import ir.sbu.softwareengineering_proposal.utils.PROPOSAL_LIST_GROUP_MANAGER_TYPE
@@ -20,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 //import ir.sbu.softwareengineering_proposal.utils.fakeProposal
 import kotlinx.android.synthetic.main.fragment_proposal_list.*
 
-class ProposalListFragment : Fragment(R.layout.fragment_proposal_list),
+class ProposalListFragment : BaseFragment(R.layout.fragment_proposal_list),
     RecyclerViewInteraction, ProposalListContract.View {
 
     private lateinit var proposalList: List<Proposal>
@@ -74,9 +75,9 @@ class ProposalListFragment : Fragment(R.layout.fragment_proposal_list),
 
     override fun showProgressBar(show: Boolean) {
         if (show) {
-            (activity as MainActivity).loadingProgressBar.visibility = View.VISIBLE
+            myActivity.loadingProgressBar.visibility = View.VISIBLE
         } else {
-            (activity as MainActivity).loadingProgressBar.visibility = View.GONE
+            myActivity.loadingProgressBar.visibility = View.GONE
         }
     }
 }

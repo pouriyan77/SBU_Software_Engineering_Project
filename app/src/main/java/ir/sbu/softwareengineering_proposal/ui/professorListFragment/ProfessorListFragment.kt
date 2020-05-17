@@ -12,12 +12,13 @@ import ir.sbu.softwareengineering_proposal.adapter.MarginSpacingItemDecoration
 import ir.sbu.softwareengineering_proposal.adapter.RecyclerViewInteraction
 import ir.sbu.softwareengineering_proposal.adapter.professorsRecycler.ProfessorsRecyclerAdapter
 import ir.sbu.softwareengineering_proposal.model.Professor
+import ir.sbu.softwareengineering_proposal.ui.BaseFragment
 import ir.sbu.softwareengineering_proposal.ui.mainActivity.MainActivity
 import ir.sbu.softwareengineering_proposal.utils.longToast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_professor_list.*
 
-class ProfessorListFragment : Fragment(R.layout.fragment_professor_list),
+class ProfessorListFragment : BaseFragment(R.layout.fragment_professor_list),
     RecyclerViewInteraction, ProfessorListContract.View {
 
     private lateinit var professorList: List<Professor>
@@ -49,9 +50,9 @@ class ProfessorListFragment : Fragment(R.layout.fragment_professor_list),
 
     override fun showProgressBar(show: Boolean) {
         if (show) {
-            (activity as MainActivity).loadingProgressBar.visibility = View.VISIBLE
+            myActivity.loadingProgressBar.visibility = View.VISIBLE
         }else{
-            (activity as MainActivity).loadingProgressBar.visibility = View.GONE
+            myActivity.loadingProgressBar.visibility = View.GONE
         }
     }
 

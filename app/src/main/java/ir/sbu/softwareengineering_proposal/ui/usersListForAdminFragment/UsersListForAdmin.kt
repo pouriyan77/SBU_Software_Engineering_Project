@@ -14,12 +14,13 @@ import ir.sbu.softwareengineering_proposal.adapter.usersRecycler.UsersRecyclerAd
 import ir.sbu.softwareengineering_proposal.model.Professor
 import ir.sbu.softwareengineering_proposal.model.Student
 import ir.sbu.softwareengineering_proposal.model.User
+import ir.sbu.softwareengineering_proposal.ui.BaseFragment
 import ir.sbu.softwareengineering_proposal.ui.mainActivity.MainActivity
 import ir.sbu.softwareengineering_proposal.utils.longToast
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_users_list_for_admin.*
 
-class UsersListForAdmin : Fragment(R.layout.fragment_users_list_for_admin),
+class UsersListForAdmin : BaseFragment(R.layout.fragment_users_list_for_admin),
     RecyclerViewInteraction, UserListForAdminContract.View {
 
     private lateinit var presenter: UserListForAdminPresenterImpl
@@ -36,7 +37,7 @@ class UsersListForAdmin : Fragment(R.layout.fragment_users_list_for_admin),
     private fun requestToServer() {
         showProgressBar(true)
         presenter.getUsersFromServer(
-            (activity as MainActivity).sessionManager!!.authToken,
+            myActivity.sessionManager!!.authToken,
             arguments?.getString("type")
         )
     }
@@ -65,9 +66,9 @@ class UsersListForAdmin : Fragment(R.layout.fragment_users_list_for_admin),
 
     override fun showProgressBar(show: Boolean) {
         if (show) {
-            (requireActivity() as MainActivity).loadingProgressBar.visibility = View.VISIBLE
+            myActivity.loadingProgressBar.visibility = View.VISIBLE
         }else{
-            (requireActivity() as MainActivity).loadingProgressBar.visibility = View.GONE
+            myActivity.loadingProgressBar.visibility = View.GONE
         }
     }
 
