@@ -1,20 +1,25 @@
 package ir.sbu.softwareengineering_proposal.ui.uploadProposalFragment
 
+import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
+import android.os.Handler
 import android.view.View
-import android.view.ViewGroup
-
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import ir.sbu.softwareengineering_proposal.R
 import ir.sbu.softwareengineering_proposal.session.SessionManager
+import ir.sbu.softwareengineering_proposal.utils.longToast
 import kotlinx.android.synthetic.main.fragment_upload_proposal.*
 import kotlinx.android.synthetic.main.loading_button.view.*
+
 
 class UploadProposal : Fragment(R.layout.fragment_upload_proposal), UploadProposalContract.View {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        showProgressBar(false)
+        setupOnClicks()
     }
 
     private fun checkUploadProposalFields(): Boolean {
@@ -22,19 +27,44 @@ class UploadProposal : Fragment(R.layout.fragment_upload_proposal), UploadPropos
     }
 
     private fun setupOnClicks() {
-        uploadProposalBtn.button.setOnClickListener {
-            showProgressBar(true)
+        uploadProposalBtn.setOnClickListener {
             if (checkUploadProposalFields()) {
+                val intent = Intent()
+                    .setType("file/*")
+                    .setAction(Intent.ACTION_GET_CONTENT)
+
+                startActivityForResult(
+                    Intent.createChooser(intent, "Select a file"),
+                    123
+                )
 
             } else {
 
             }
         }
+
+        uploadFinalProposal.button.setOnClickListener {
+            showProgressBar(true)
+            val handler = Handler()
+            handler.postDelayed({
+                showProgressBar(false)
+                showToast("پروپوزال با موفقیت آپلود شد")
+                findNavController().navigateUp()
+            }, 2000)
+        }
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        val splittedData = data?.dataString?.split("/")
+        val fileName = splittedData?.get(splittedData.size - 1)
+        proposalFileName.text = fileName
     }
 
 
     override fun showToast(message: String) {
-
+        requireContext().longToast(message)
     }
 
     override fun successfulLogin(session: SessionManager) {
@@ -42,15 +72,15 @@ class UploadProposal : Fragment(R.layout.fragment_upload_proposal), UploadPropos
     }
 
     override fun showProgressBar(show: Boolean) {
-        uploadProposalBtn.button.isEnabled = !show
+        uploadFinalProposal.button.isEnabled = !show
         if (show) {
-            uploadProposalBtn.button.background =
+            uploadFinalProposal.button.background =
                 resources.getDrawable(R.drawable.loading_button_selector, null)
-            uploadProposalBtn.button.text = ""
+            uploadFinalProposal.button.text = ""
         } else {
-            uploadProposalBtn.button.background =
+            uploadFinalProposal.button.background =
                 resources.getDrawable(R.drawable.login_button_selector, null)
-            uploadProposalBtn.button.text = "آپلود پروپوزال"
+            uploadFinalProposal.button.text = "آپلود"
         }
     }
 
