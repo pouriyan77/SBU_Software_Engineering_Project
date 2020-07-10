@@ -57,11 +57,17 @@ class ProposalListFragment : BaseFragment(R.layout.fragment_proposal_list),
 
     override fun onItemClickedListener(position: Int) {
         val proposal = proposalList[position]
-        val bundle = bundleOf("PROPOSAL" to proposal)
+        val bundle = bundleOf("PROPOSAL" to proposal, "LIST_TYPE" to listType)
         if (listType == PROPOSAL_LIST_PROFESSOR_TYPE){
-            findNavController().navigate(R.id.action_proposalListFragment_to_examineProposal, bundle)
+            findNavController().navigate(
+                R.id.action_proposalListFragment_to_examineProposal,
+                bundle
+            )
         }else {
-            findNavController().navigate(R.id.action_proposalListFragment_to_professorListFragment)
+            findNavController().navigate(
+                R.id.action_proposalListFragment_to_professorListFragment,
+                bundle
+            )
         }
     }
 

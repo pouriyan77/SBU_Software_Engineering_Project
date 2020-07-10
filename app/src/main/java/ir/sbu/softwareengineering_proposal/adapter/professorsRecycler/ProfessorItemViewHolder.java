@@ -1,6 +1,7 @@
 package ir.sbu.softwareengineering_proposal.adapter.professorsRecycler;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,6 +23,7 @@ public class ProfessorItemViewHolder extends RecyclerViewHolder<Professor> {
     private TextView educationalGroupTextView;
     private RecyclerView fieldOfStudyRecyclerView;
     private FieldOfStudyRecyclerAdapter adapter;
+    private ImageView selectedIcon;
 
     public ProfessorItemViewHolder(@NotNull View itemView, @Nullable RecyclerViewInteraction interaction) {
         super(itemView, interaction);
@@ -30,6 +32,7 @@ public class ProfessorItemViewHolder extends RecyclerViewHolder<Professor> {
         degreeTextView = itemView.findViewById(R.id.degreeTextView);
         educationalGroupTextView = itemView.findViewById(R.id.educationalGroupTextView);
         fieldOfStudyRecyclerView = itemView.findViewById(R.id.fieldOfStudyRecyclerView);
+        selectedIcon = itemView.findViewById(R.id.selectedIcon);
     }
 
     @Override
@@ -47,5 +50,6 @@ public class ProfessorItemViewHolder extends RecyclerViewHolder<Professor> {
         }
         fieldOfStudyRecyclerView.setAdapter(adapter);
         fieldOfStudyRecyclerView.addItemDecoration(new HorizontalSpacingItemDecoration(3));
+        selectedIcon.setVisibility(item.getSelected() ? View.VISIBLE : View.GONE);
     }
 }

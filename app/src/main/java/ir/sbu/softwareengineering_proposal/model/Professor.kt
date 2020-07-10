@@ -15,5 +15,6 @@ class Professor(
     override val lastName: String,
     override var email: String,
     override val roleId: Int,
-    override val completeProfileStatus: Boolean
+    override val completeProfileStatus: Boolean,
+    var selected: Boolean = false
 ): User(id, nationalCode, firstName, lastName, email, roleId, completeProfileStatus)

@@ -20,7 +20,80 @@ class ProfessorListPresenterImpl(private val view: ProfessorListContract.View
         proposalId: Int,
         professorId: Int
     ) {
+        val call = RetrofitBuilder.apiService.defineSupervisor(
+            PRE_TOKEN + authToken,
+            studentId,
+            professorId,
+            proposalId
+        )
 
+        call.enqueue(object : Callback<GenericResponse> {
+            override fun onFailure(call: Call<GenericResponse>, t: Throwable) {
+                view.showProgressBar(false)
+                view.showToast(genericErrorStr)
+            }
+
+            override fun onResponse(
+                call: Call<GenericResponse>,
+                response: Response<GenericResponse>
+            ) {
+                if (response.isSuccessful){
+                    val response = response.body()
+                    if (response != null) {
+                        if (response.status == GenericResponse.SUCCESS_STATUS) {
+                            view.successfulSupervisorDefine()
+                        }else if (response.status == GenericResponse.FAILED_STATUS){
+                            view.showToast(response.message)
+                        }
+                    }
+                } else{
+                    view.showToast(response.message())
+                }
+                view.showProgressBar(false)
+            }
+
+        })
+    }
+
+    override fun requestDefiningReferees(
+        authToken: String,
+        refereeId1: Int,
+        refereeId2: Int,
+        proposalId: Int
+    ) {
+        val call = RetrofitBuilder.apiService.defineReferees(
+            PRE_TOKEN + authToken,
+            refereeId1,
+            refereeId2,
+            proposalId
+        )
+
+        call.enqueue(object : Callback<GenericResponse> {
+            override fun onFailure(call: Call<GenericResponse>, t: Throwable) {
+                view.showProgressBar(false)
+                view.showToast(genericErrorStr)
+            }
+
+            override fun onResponse(
+                call: Call<GenericResponse>,
+                response: Response<GenericResponse>
+            ) {
+                if (response.isSuccessful){
+                    val response = response.body()
+                    if (response != null) {
+                        if (response.status == GenericResponse.SUCCESS_STATUS) {
+                            view.successfulRefereeDefine()
+                        }else if (response.status == GenericResponse.FAILED_STATUS){
+                            view.showToast(response.message)
+                        }
+                    }
+                } else{
+                    view.showToast(response.message())
+                }
+                view.showProgressBar(false)
+            }
+
+        })
     }
 
     override fun requestProfessorList(authToken: String) {

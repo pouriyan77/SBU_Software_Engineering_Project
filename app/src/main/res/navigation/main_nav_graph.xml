@@ -74,7 +74,14 @@
         android:id="@+id/professorListFragment"
         android:name="ir.sbu.softwareengineering_proposal.ui.professorListFragment.ProfessorListFragment"
         android:label="fragment_professor_list"
-        tools:layout="@layout/fragment_professor_list" />
+        tools:layout="@layout/fragment_professor_list">
+
+        <argument android:name="LIST_TYPE"
+            app:argType="integer"/>
+
+        <argument android:name="PROPOSAL"
+            app:argType="ir.sbu.softwareengineering_proposal.model.Proposal"/>
+    </fragment>
     <fragment
         android:id="@+id/modifyUserByHimself"
         android:name="ir.sbu.softwareengineering_proposal.ui.modifyUserByHimself.ModifyUserByHimself"

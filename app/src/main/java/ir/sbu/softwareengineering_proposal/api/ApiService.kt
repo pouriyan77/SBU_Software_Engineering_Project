@@ -71,4 +71,14 @@ interface ApiService {
         @Field("proposal_id") proposalId: Int,
         @Header("Accept") accept: String = "application/json"
     ): Call<GenericResponse>
+
+    @FormUrlEncoded
+    @POST("choose_judge")
+    fun defineReferees(
+        @Header("Authorization") authorization: String,
+        @Field("judge1_id") refereeId1: Int,
+        @Field("judge2_id") refereeId2: Int,
+        @Field("proposal_id") proposalId: Int,
+        @Header("Accept") accept: String = "application/json"
+    ): Call<GenericResponse>
 }
