@@ -9,13 +9,13 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/examineProposalBtn"
         android:padding="@dimen/standard_margin">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="@dimen/standard_margin">
 
             <TextView
                 android:id="@+id/proposalTitleTextView"
@@ -55,12 +55,12 @@
                 android:layout_marginTop="@dimen/standard_margin"
                 android:layout_marginEnd="8dp"
                 android:fontFamily="@font/iran_sans_1"
+                android:text="کلمات کلیدی"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/normal_font_size"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/studentNameProposalTextView"
-                android:text="کلمات کلیدی" />
+                app:layout_constraintTop_toBottomOf="@+id/studentNameProposalTextView" />
 
             <TextView
                 android:id="@+id/keywordsForProposal"
@@ -154,18 +154,83 @@
                     android:textColor="@color/colorAccent" />
             </RadioGroup>
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/professorCommentOnProposal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/forms_with_margin"
+                android:layout_marginTop="@dimen/forms_with_margin"
+                android:layout_marginRight="@dimen/forms_with_margin"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:textColorHint="@color/colorAccent"
+                app:counterOverflowTextAppearance="@style/usernameCounterStyle"
+                app:counterTextAppearance="@style/usernameCounterStyle"
+                app:hintTextColor="@color/colorAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uploadProposalTitle">
 
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/persianTitleUploadProposalTextInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/colorAccent"
+                    android:fontFamily="@font/iran_sans_1"
+                    android:gravity="center"
+                    android:hint="نظر"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:textColor="@color/colorAccent"
+                    android:textColorHint="@color/colorAccent"
+                    app:hintTextColor="@color/colorAccent" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <RadioGroup
+                android:id="@+id/beforeAndAfterPresentation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/forms_with_margin"
+                android:layout_marginBottom="@dimen/standard_margin"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/beforePresentation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/radioMargin"
+                    android:buttonTint="@color/colorAccent"
+                    android:checked="true"
+                    android:fontFamily="@font/iran_sans_1"
+                    android:text="قبل از دفاع"
+                    android:textColor="@color/colorAccent" />
+
+                <RadioButton
+                    android:id="@+id/afterPresentation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/radioMargin"
+                    android:buttonTint="@color/colorAccent"
+                    android:checked="false"
+                    android:fontFamily="@font/iran_sans_1"
+                    android:text="بعد از دفاع"
+                    android:textColor="@color/colorAccent" />
+
+            </RadioGroup>
+
+            <include
+                android:id="@+id/examineProposalBtn"
+                layout="@layout/loading_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="@dimen/forms_with_margin"
+                android:layout_marginTop="@dimen/forms_with_margin"
+                android:layout_marginBottom="@dimen/forms_with_margin" />
         </LinearLayout>
-    </ScrollView>
 
-    <include
-        android:id="@+id/examineProposalBtn"
-        layout="@layout/loading_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginHorizontal="@dimen/forms_with_margin"
-        android:layout_marginBottom="@dimen/forms_with_margin" />
+    </ScrollView>
 
 
 </RelativeLayout>
