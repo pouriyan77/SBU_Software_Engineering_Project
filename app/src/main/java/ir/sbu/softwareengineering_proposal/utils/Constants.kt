@@ -17,6 +17,9 @@ const val uploadProposalStr = "آپلود پروپوزال"
 const val judgeProposalStr = "داوری پروپوزال"
 const val setSupervisorStr = "تعیین استاد راهنما"
 const val setJudgeStr = "مشخص کردن داور"
+const val finalEvaluationStr = "وضعیت پروپوزال"
+const val committeeEvaluationStr = "نظر نهایی شورا"
+const val availableTimesForProfessorsStr = "زمان های خالی برای تعیین تایم دفاع"
 
 const val PROPOSAL_LIST_ADMIN_TYPE = 1
 const val PROPOSAL_LIST_PROFESSOR_TYPE = 2
@@ -34,11 +37,13 @@ const val STUDENT_PARDIS_STUDY_TYPE = "pardis"
 val adminDeskItems = listOf<DeskItem>(
     DeskItem(addUserStr, R.mipmap.add_user_icon),
     DeskItem(editUserStr, R.mipmap.edit_user_icon),
-            DeskItem(setSupervisorStr, R.mipmap.set_supervisor_icon)
+    DeskItem(setSupervisorStr, R.mipmap.set_supervisor_icon),
+    DeskItem(committeeEvaluationStr, R.mipmap.committee_evaluation_icon)
 )
 
 val studentDeskItems = listOf<DeskItem>(
-    DeskItem(uploadProposalStr, R.mipmap.upload_proposal_icon)
+    DeskItem(uploadProposalStr, R.mipmap.upload_proposal_icon),
+    DeskItem(finalEvaluationStr, R.mipmap.final_evaluation_icon)
 )
 
 val groupManagerDeskItems = listOf<DeskItem>(
@@ -47,7 +52,8 @@ val groupManagerDeskItems = listOf<DeskItem>(
 )
 
 val professorDeskItems = listOf<DeskItem>(
-    DeskItem(judgeProposalStr, R.mipmap.judge_icon)
+    DeskItem(judgeProposalStr, R.mipmap.judge_icon),
+    DeskItem(availableTimesForProfessorsStr, R.mipmap.available_times_icon)
 )
 
 //val fakeProfessors = listOf(
