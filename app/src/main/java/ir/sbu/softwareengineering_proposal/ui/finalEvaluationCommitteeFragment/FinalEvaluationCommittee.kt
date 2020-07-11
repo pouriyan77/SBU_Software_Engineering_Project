@@ -65,7 +65,7 @@ class FinalEvaluationCommittee : BaseFragment(R.layout.fragment_final_evaluation
     }
 
     override fun acceptClicked(position: Int) {
-        setProposalStatus(proposalList[position].proposalId, "accept")
+        setProposalStatus(proposalList[position].proposalId, "accepted")
     }
 
     override fun declineClicked(position: Int) {

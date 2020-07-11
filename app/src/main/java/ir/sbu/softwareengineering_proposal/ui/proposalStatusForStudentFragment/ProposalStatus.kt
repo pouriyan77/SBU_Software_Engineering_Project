@@ -37,7 +37,7 @@ class ProposalStatus : BaseFragment(R.layout.fragment_proposal_status), Proposal
     private fun setupOnClicks() {
         uploadProposalBtn.setOnClickListener {
             val intent = Intent()
-                .setType("file/*")
+                .setType("*/*")
                 .setAction(Intent.ACTION_GET_CONTENT)
 
             startActivityForResult(

@@ -1,10 +1,12 @@
 package ir.sbu.softwareengineering_proposal.ui.uploadProposalFragment
 
+import android.Manifest
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import android.os.Handler
 import android.view.View
-import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import ir.sbu.softwareengineering_proposal.R
@@ -12,7 +14,6 @@ import ir.sbu.softwareengineering_proposal.session.SessionManager
 import ir.sbu.softwareengineering_proposal.utils.longToast
 import kotlinx.android.synthetic.main.fragment_upload_proposal.*
 import kotlinx.android.synthetic.main.loading_button.view.*
-
 
 class UploadProposal : Fragment(R.layout.fragment_upload_proposal), UploadProposalContract.View {
 
@@ -29,17 +30,23 @@ class UploadProposal : Fragment(R.layout.fragment_upload_proposal), UploadPropos
     private fun setupOnClicks() {
         uploadProposalBtn.setOnClickListener {
             if (checkUploadProposalFields()) {
-                val intent = Intent()
-                    .setType("file/*")
-                    .setAction(Intent.ACTION_GET_CONTENT)
+                val permissionCheck =
+                    ContextCompat.checkSelfPermission(
+                        requireContext(),
+                        Manifest.permission.READ_EXTERNAL_STORAGE
+                    )
 
-                startActivityForResult(
-                    Intent.createChooser(intent, "Select a file"),
-                    123
-                )
+                if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+                    requestPermissions(
+                        arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
+                        101010
+                    )
+                } else {
+                    uploadProposal()
+                }
 
             } else {
-
+                // do something
             }
         }
 
@@ -53,6 +60,30 @@ class UploadProposal : Fragment(R.layout.fragment_upload_proposal), UploadPropos
             }, 2000)
         }
 
+    }
+
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 101010) {
+            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                uploadProposal()
+            }
+        }
+    }
+
+    private fun uploadProposal() {
+        val intent = Intent()
+            .setType("*/*")
+            .setAction(Intent.ACTION_GET_CONTENT)
+
+        startActivityForResult(
+            Intent.createChooser(intent, "Select a file"),
+            123
+        )
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
