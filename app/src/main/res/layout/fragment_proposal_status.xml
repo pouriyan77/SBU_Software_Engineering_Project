@@ -28,7 +28,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/title_font_size"
-                tools:text="وضعیت پروپوزال دانشجو" />
+                android:text="وضعیت پروپوزال دانشجو" />
 
             <TextView
                 android:id="@+id/proposalStatusTitleBeforePresentation"
@@ -40,7 +40,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/title_font_size"
-                tools:text="قبل از دفاع" />
+                android:text="قبل از دفاع" />
 
 
             <TextView
@@ -60,7 +60,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/standard_margin"
-                android:layout_marginRight="@dimen/standard_margin"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:fontFamily="@font/iran_sans_1"
                 android:text="نظر اول"
@@ -84,7 +83,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/standard_margin"
-                android:layout_marginRight="@dimen/standard_margin"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:fontFamily="@font/iran_sans_1"
                 android:text="نظر دوم"
@@ -109,7 +107,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/standard_margin"
-                android:layout_marginRight="@dimen/standard_margin"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:fontFamily="@font/iran_sans_1"
                 android:text="تایید"
@@ -131,9 +128,7 @@
                 android:layout_width="100dp"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/forms_with_margin"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:layout_marginRight="@dimen/forms_with_margin"
                 android:background="@drawable/login_button_selector"
                 android:fontFamily="@font/iran_sans_1"
                 android:text="بارگذاری مجدد پروپوزال"
@@ -165,7 +160,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/title_font_size"
-                tools:text="بعد از دفاع" />
+                android:text="بعد از دفاع" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -184,7 +179,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/standard_margin"
-                android:layout_marginRight="@dimen/standard_margin"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:fontFamily="@font/iran_sans_1"
                 android:text="نظر اول"
@@ -208,7 +202,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/standard_margin"
-                android:layout_marginRight="@dimen/standard_margin"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:fontFamily="@font/iran_sans_1"
                 android:text="نظر دوم"
@@ -232,7 +225,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/standard_margin"
-                android:layout_marginRight="@dimen/standard_margin"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:fontFamily="@font/iran_sans_1"
                 android:text="تایید"
@@ -249,7 +241,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/title_font_size"
-                tools:text="زمان دفاع" />
+                android:text="زمان دفاع" />
 
             <TextView
                 android:id="@+id/presentationTime"
@@ -257,10 +249,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/standard_margin"
-                android:layout_marginRight="@dimen/standard_margin"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:fontFamily="@font/iran_sans_1"
-                android:text="ساعت 15:00"
+                tools:text="یکشنبه ساعت 15:00"
                 android:textColor="@color/colorAccent"
                 android:textSize="@dimen/normal_font_size" />
 
@@ -274,7 +265,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/title_font_size"
-                tools:text="نتیجه شورا" />
+                android:text="نتیجه شورا" />
 
             <TextView
                 android:id="@+id/committeeStatus"
@@ -282,7 +273,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="@dimen/standard_margin"
-                android:layout_marginRight="@dimen/standard_margin"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:fontFamily="@font/iran_sans_1"
                 android:text="تایید"

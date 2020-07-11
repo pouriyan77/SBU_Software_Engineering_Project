@@ -5,11 +5,17 @@ import ir.sbu.softwareengineering_proposal.session.SessionManager
 interface ExamineProposalContract {
     interface View{
         fun showToast(message: String)
-        fun successfulLogin(session: SessionManager)
+        fun successfulSubmit()
         fun showProgressBar(show: Boolean)
     }
 
     interface Presenter{
-        fun requestLogin()
+        fun requestExamine(
+            authToken: String,
+            status: String,
+            message: String,
+            proposalId: Int,
+            beforeOrAfter: String
+        )
     }
 }

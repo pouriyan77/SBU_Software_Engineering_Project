@@ -7,5 +7,6 @@
     <string name="login_title_str">ورود به صفحه کاربری</string>
 
     <string name="fullNameStr">%s %s</string>
+    <string name="timesStr">%s - ساعت %d الی %d</string>
 
 </resources>

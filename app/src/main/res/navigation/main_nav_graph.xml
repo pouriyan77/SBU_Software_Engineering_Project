@@ -45,6 +45,21 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_proposalStatus"
+            app:destination="@id/proposalStatus"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+        <action
+            android:id="@+id/action_mainFragment_to_availableTimes"
+            app:destination="@id/availableTimes"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -223,4 +238,14 @@
             app:argType="ir.sbu.softwareengineering_proposal.model.Proposal"
             />
     </fragment>
+    <fragment
+        android:id="@+id/proposalStatus"
+        android:name="ir.sbu.softwareengineering_proposal.ui.proposalStatusForStudentFragment.ProposalStatus"
+        android:label="ProposalStatus"
+        tools:layout="@layout/fragment_proposal_status"/>
+    <fragment
+        android:id="@+id/availableTimes"
+        android:name="ir.sbu.softwareengineering_proposal.ui.availableTimesFragment.AvailableTimes"
+        android:label="AvailableTimes"
+        tools:layout="@layout/fragment_available_times"/>
 </navigation>

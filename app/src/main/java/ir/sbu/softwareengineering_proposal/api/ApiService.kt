@@ -81,4 +81,38 @@ interface ApiService {
         @Field("proposal_id") proposalId: Int,
         @Header("Accept") accept: String = "application/json"
     ): Call<GenericResponse>
+
+    @FormUrlEncoded
+    @POST("judge_proposal")
+    fun examineProposal(
+        @Header("Authorization") authorization: String,
+        @Field("judge_response") status: String?,
+        @Field("judge_message") message: String?,
+        @Field("proposal_id") proposalId: Int,
+        @Field("flag") beforeOrAfter: String?,
+        @Field("shora_response") shoraRes: String? = null,
+        @Header("Accept") accept: String = "application/json"
+    ): Call<GenericResponse>
+
+    @GET("get_proposal_result")
+    fun getProposalStatus(
+        @Header("Authorization") authorization: String,
+        @Query("user_id") userId: Int
+    ): Call<ProposalStatusResponse>
+
+    @GET("get_times")
+    fun getProfessorTimes(
+        @Header("Authorization") authorization: String
+    ): Call<List<TimeResponse>>
+
+    @FormUrlEncoded
+    @POST("add_free_time")
+    fun addFreeTime(
+        @Header("Authorization") authorization: String,
+        @Field("day") day: Int,
+        @Field("start") startTime: Int,
+        @Field("end") endTime: Int,
+        @Header("Accept") accept: String = "application/json"
+    ): Call<AddTimeResponse>
+
 }

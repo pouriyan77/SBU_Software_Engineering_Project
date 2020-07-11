@@ -40,9 +40,9 @@
             app:layout_constraintTop_toBottomOf="@+id/uploadProposalTitle">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dayTextInput"
                 app:hintTextColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent"
-                android:id="@+id/dayTextInput"
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/colorAccent"
                 android:layout_height="wrap_content"
@@ -50,7 +50,7 @@
                 android:gravity="center"
                 android:hint="روز"
                 android:textColor="@color/colorAccent"
-                android:inputType="text"
+                android:inputType="number"
                 android:maxLength="1"
                 android:maxLines="1" />
 
@@ -71,18 +71,18 @@
             app:layout_constraintTop_toBottomOf="@+id/uploadProposalTitle">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/startTimeTextInput"
                 app:hintTextColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent"
-                android:id="@+id/startTimeTextInput"
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/colorAccent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
-                android:hint="شروع ارائه"
+                android:hint="ساعت شروع"
                 android:textColor="@color/colorAccent"
-                android:inputType="text"
-                android:maxLength="5"
+                android:inputType="number"
+                android:maxLength="2"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -103,24 +103,32 @@
             app:layout_constraintTop_toBottomOf="@+id/uploadProposalTitle">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/finishTimeTextInput"
                 app:hintTextColor="@color/colorAccent"
                 android:textColorHint="@color/colorAccent"
-                android:id="@+id/finishTimeTextInput"
                 android:layout_width="match_parent"
                 android:backgroundTint="@color/colorAccent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/iran_sans_1"
                 android:gravity="center"
-                android:hint="پایان ارائه"
+                android:hint="ساعت پایان"
                 android:textColor="@color/colorAccent"
-                android:inputType="text"
-                android:maxLength="5"
+                android:inputType="number"
+                android:maxLength="2"
                 android:maxLines="1" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <include
+            android:id="@+id/addTimeBtn"
+            layout="@layout/loading_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            />
+
         <TextView
-            android:id="@+id/timeList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -132,10 +140,9 @@
             android:textSize="@dimen/title_font_size" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/deskRecyclerView"
+            android:id="@+id/timesRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:spanCount="2"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             tools:listitem="@layout/recycler_available_times_layout" />
 
