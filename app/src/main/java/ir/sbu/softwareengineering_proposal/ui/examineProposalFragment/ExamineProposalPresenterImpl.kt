@@ -10,6 +10,7 @@ import retrofit2.Response
 
 class ExamineProposalPresenterImpl(private val view: ExamineProposalContract.View):
     ExamineProposalContract.Presenter {
+
     override fun requestExamine(
         authToken: String,
         status: String,

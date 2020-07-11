@@ -19,7 +19,7 @@ const val setSupervisorStr = "تعیین استاد راهنما"
 const val setJudgeStr = "مشخص کردن داور"
 const val finalEvaluationStr = "وضعیت پروپوزال"
 const val committeeEvaluationStr = "نظر نهایی شورا"
-const val availableTimesForProfessorsStr = "زمان های خالی برای تعیین تایم دفاع"
+const val availableTimesForProfessorsStr = "زمان های خالی"
 
 const val PROPOSAL_LIST_ADMIN_TYPE = 1
 const val PROPOSAL_LIST_PROFESSOR_TYPE = 2
@@ -55,13 +55,5 @@ val groupManagerDeskItems = listOf<DeskItem>(
 val professorDeskItems = listOf<DeskItem>(
     DeskItem(judgeProposalStr, R.mipmap.judge_icon),
     DeskItem(availableTimesForProfessorsStr, R.mipmap.available_times_icon)
-)
-
-val fakeAcademicList = listOf<Major>(
-    Major(1, "مهندسی نرم افزار و سیستم های اطلاعاتی"),
-    Major(2, "هوش مصنوعی و سیستم های خبره"),
-    Major(3, "معماری کامپیوتر"),
-    Major(4, "امنیت شبکه"),
-    Major(5, "الگوریتم")
 )
 

@@ -60,6 +60,13 @@
             app:popEnterAnim="@anim/slide_in_left"
             app:popExitAnim="@anim/slide_out_right"
             />
+        <action
+            android:id="@+id/action_mainFragment_to_finalEvaluationCommittee"
+            app:destination="@id/finalEvaluationCommittee"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -248,4 +255,9 @@
         android:name="ir.sbu.softwareengineering_proposal.ui.availableTimesFragment.AvailableTimes"
         android:label="AvailableTimes"
         tools:layout="@layout/fragment_available_times"/>
+    <fragment
+        android:id="@+id/finalEvaluationCommittee"
+        android:name="ir.sbu.softwareengineering_proposal.ui.finalEvaluationCommitteeFragment.FinalEvaluationCommittee"
+        android:label="FinalEvaluationCommittee"
+        tools:layout="@layout/fragment_final_evaluation_committee"/>
 </navigation>

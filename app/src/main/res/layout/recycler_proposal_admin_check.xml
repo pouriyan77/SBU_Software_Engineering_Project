@@ -6,7 +6,9 @@
     android:layout_height="wrap_content"
     android:backgroundTint="@color/card_background_dark"
     app:cardCornerRadius="@dimen/cardStandardCorner"
-    app:cardElevation="5dp">
+    app:cardElevation="5dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginHorizontal="2dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -25,7 +27,7 @@
             app:srcCompat="@mipmap/thesis_icon" />
 
         <TextView
-            android:id="@+id/ProposalNameTextView"
+            android:id="@+id/proposalNameTextView"
             style="@style/cardDetailsTextsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,21 +49,45 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ProposalNameTextView"
+            app:layout_constraintTop_toBottomOf="@+id/proposalNameTextView"
             tools:text="کیمیا آقایی" />
 
-
-        <include layout="@layout/loading_button"
-            android:id="@+id/setFinalProposalStatusByAdmin"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/forms_with_margin"
-            android:layout_marginTop="@dimen/standard_margin"
-            android:layout_marginBottom="@dimen/standard_margin"
+            android:orientation="horizontal"
+            android:layoutDirection="rtl"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/studentNameProposalTextView" />
+            app:layout_constraintTop_toBottomOf="@+id/studentNameProposalTextView">
+
+            <Button
+                android:id="@+id/acceptBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_button_selector"
+                android:backgroundTint="@color/successColor"
+                android:fontFamily="@font/iran_sans_1"
+                android:text="تایید"
+                android:textColor="@android:color/white"
+                android:layout_margin="@dimen/standard_margin"
+                android:layout_weight="1"/>
+
+
+            <Button
+                android:id="@+id/declineBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_button_selector"
+                android:backgroundTint="@color/errorColor"
+                android:fontFamily="@font/iran_sans_1"
+                android:text="رد"
+                android:textColor="@android:color/white"
+                android:layout_margin="@dimen/standard_margin"
+                android:layout_weight="1"/>
+        </LinearLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

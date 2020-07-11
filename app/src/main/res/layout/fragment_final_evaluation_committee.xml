@@ -10,7 +10,7 @@
     android:background="@color/background">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/finalEvaluationByAdminRecyclerViewer"
+        android:id="@+id/finalEvaluationByAdminRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:spanCount="1"

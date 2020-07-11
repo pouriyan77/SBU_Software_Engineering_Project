@@ -81,6 +81,7 @@ class DeskFragment : Fragment(R.layout.fragment_desk), RecyclerViewInteraction {
             uploadProposalStr -> findNavController().navigate(R.id.action_mainFragment_to_uploadProposal)
             finalEvaluationStr -> findNavController().navigate(R.id.action_mainFragment_to_proposalStatus)
             availableTimesForProfessorsStr -> findNavController().navigate(R.id.action_mainFragment_to_availableTimes)
+            committeeEvaluationStr -> findNavController().navigate(R.id.action_mainFragment_to_finalEvaluationCommittee)
             else -> Toast.makeText(context, name, Toast.LENGTH_LONG).show()
         }
     }

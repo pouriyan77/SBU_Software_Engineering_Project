@@ -115,4 +115,8 @@ interface ApiService {
         @Header("Accept") accept: String = "application/json"
     ): Call<AddTimeResponse>
 
+    @GET("show_all_last_accepted")
+    fun getAllAcceptedProposals(
+        @Header("Authorization") authorization: String
+    ): Call<List<ProposalResponse>>
 }
